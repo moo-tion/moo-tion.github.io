@@ -1,0 +1,73 @@
+/* Custom styles for Moo-tion (one-page) */
+:root {
+  --bilkent-blue: #004080;
+  --accent-green: #5BA85B;
+}
+html { scroll-behavior: smooth; }
+.nav-link { color: #334155; font-weight: 500; }
+.nav-link:hover { color: var(--bilkent-blue); }
+
+.section { padding: 64px 0; }
+.section.alt { background: #f8fafc; }
+.container { max-width: 72rem; margin: 0 auto; padding: 0 1rem; }
+.section-title { font-size: 1.875rem; font-weight: 800; color: #0f172a; }
+.section-subtitle { color: #475569; margin-top: 0.25rem; }
+
+.card { background: #fff; border: 1px solid #e2e8f0; border-radius: 0.75rem; padding: 1rem; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.report-card { display: block; padding: 1rem; border: 1px solid #e2e8f0; border-radius: 0.75rem; background: #fff; box-shadow: 0 1px 2px rgba(0,0,0,0.04); }
+.report-card:hover { border-color: #cbd5e1; }
+
+.report-status { font-size: .75rem; padding: .125rem .5rem; border-radius: .5rem; border: 1px solid #cbd5e1; }
+.report-status.success { background: #ecfeff; color: #0e7490; }
+.report-status.pending { background: #fff7ed; color: #b45309; }
+
+.report-title { font-weight: 700; margin-top: .5rem; }
+.report-desc { font-size: .875rem; color: #475569; }
+
+.report-btn { display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .9rem; border-radius: .5rem; background: #08305a; color: #fff; text-decoration: none; font-weight: 600; }
+.report-btn:focus { outline: 2px solid rgba(8,48,90,0.15); }
+.report-pill { display: inline-flex; align-items: center; gap: .5rem; padding: .45rem .9rem; border-radius: .5rem; border: 1px solid #e6e9ee; background: #fff; color: #64748b; }
+
+.btn-primary { background: var(--bilkent-blue); color: #fff; padding: .6rem 1rem; border-radius: .6rem; font-weight: 600; }
+.btn-primary:hover { filter: brightness(1.05); }
+.btn-secondary { background: #e2e8f0; color: #0f172a; padding: .6rem 1rem; border-radius: .6rem; font-weight: 600; }
+.btn-secondary:hover { background: #cbd5e1; }
+
+.input { width: 100%; border: 1px solid #cbd5e1; border-radius: .5rem; padding: .6rem .75rem; background: #fff; }
+.input:focus { outline: 2px solid #93c5fd; outline-offset: 2px; }
+
+/* --- Fix TEAM section layout --- */
+#team .grid {
+  align-items: stretch;
+}
+
+/* Make all team member cards equal height & consistent spacing */
+#team .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+  height: 100%;
+  padding: 1.5rem; /* slightly larger padding */
+  border-radius: 0.75rem;
+  background: #ffffff;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+/* Improve spacing between text elements inside each card */
+#team .card h3 {
+  margin-bottom: 0.25rem;
+}
+
+#team .card p {
+  margin-top: 0.25rem;
+  margin-bottom: 0.25rem;
+}
+
+/* Slightly tighten the grid gaps for a balanced look */
+#team .grid {
+  gap: 1.5rem;
+}
+
+

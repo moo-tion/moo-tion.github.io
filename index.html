@@ -1,0 +1,270 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Official CS491 Senior Design Project website for Moo-tion, a computer-vision-based herd management system by Bilkent University Computer Engineering students." />
+  <title>Moo-tion — CS491 Senior Design Project</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 256 256'><text x='12' y='180' font-size='160'>🐄</text></svg>">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="assets/css/style.css">
+</head>
+<body class="text-slate-800 bg-white scroll-smooth">
+  <header class="sticky top-0 z-50 bg-white/90 backdrop-blur border-b border-slate-200 relative">
+    <div class="max-w-6xl mx-auto px-4 py-3 flex items-center justify-between">
+      <a href="#home" class="flex items-center gap-2 font-semibold">
+        <span class="text-2xl">🐄</span>
+        <span>Moo-tion</span>
+      </a>
+      
+      <div class="hidden md:flex items-center gap-6">
+        <nav class="flex items-center gap-6">
+          <a href="#home" class="nav-link">Home</a>
+          <a href="#team" class="nav-link">Team</a>
+          <a href="#reports" class="nav-link">Reports</a>
+          <a href="#course" class="nav-link">Course</a>
+        </nav>
+        <a href="#" id="githubLink" class="inline-flex items-center gap-2 px-3 py-1.5 rounded-lg border border-slate-300 hover:bg-slate-50 text-sm" aria-label="GitHub Repository">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.77 5.46.77 11.74c0 4.92 3.19 9.1 7.62 10.57.56.1.77-.24.77-.54v-2c-3.1.67-3.76-1.34-3.76-1.34-.51-1.28-1.25-1.62-1.25-1.62-1.02-.7.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 .1.77 2.1 2.86 1.53.1-.75.39-1.27.7-1.56-2.48-.28-5.08-1.24-5.08-5.51 0-1.22.43-2.22 1.14-3-.11-.28-.5-1.42.11-2.95 0 0 .95-.3 3.1 1.15.9-.25 1.86-.38 2.82-.39.96.01 1.92.14 2.82.39 2.15-1.45 3.1-1.15 3.1-1.15.61 1.53.22 2.67.11 2.95.71.78 1.14 1.78 1.14 3 0 4.28-2.61 5.22-5.1 5.49.4.35.75 1.04.75 2.1v3.11c0 .3.21.65.78.54 4.42-1.47 7.61-5.65 7.61-10.57C23.22 5.46 18.26.5 12 .5Z"/></svg>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+      </div>
+      
+      <button id="mobile-menu-btn" class="md:hidden p-2 rounded-md text-slate-600 hover:bg-slate-100" aria-label="Toggle menu" aria-expanded="false">
+        <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+      </button>
+    </div>
+    
+    <div id="mobile-menu" class="hidden md:hidden absolute top-full left-0 w-full bg-white border-b border-slate-200 shadow-lg">
+      <nav class="flex flex-col p-4 gap-3">
+        <a href="#home" class="nav-link-mobile">Home</a>
+        <a href="#team" class="nav-link-mobile">Team</a>
+        <a href="#reports" class="nav-link-mobile">Reports</a>
+        <a href="#course" class="nav-link-mobile">Course</a>
+        
+        <a href="#" id="githubLink2" class="flex items-center gap-2 px-3 py-2 rounded-lg border border-slate-200 bg-slate-50 hover:bg-slate-100 text-sm font-medium" aria-label="GitHub Repository">
+          <svg xmlns="http://www.w3.org/2000/svg" class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.77 5.46.77 11.74c0 4.92 3.19 9.1 7.62 10.57.56.1.77-.24.77-.54v-2c-3.1.67-3.76-1.34-3.76-1.34-.51-1.28-1.25-1.62-1.25-1.62-1.02-.7.08-.68.08-.68 1.12.08 1.7 1.15 1.7 1.15 1 .1.77 2.1 2.86 1.53.1-.75.39-1.27.7-1.56-2.48-.28-5.08-1.24-5.08-5.51 0-1.22.43-2.22 1.14-3-.11-.28-.5-1.42.11-2.95 0 0 .95-.3 3.1 1.15.9-.25 1.86-.38 2.82-.39.96.01 1.92.14 2.82.39 2.15-1.45 3.1-1.15 3.1-1.15.61 1.53.22 2.67.11 2.95.71.78 1.14 1.78 1.14 3 0 4.28-2.61 5.22-5.1 5.49.4.35.75 1.04.75 2.1v3.11c0 .3.21.65.78.54 4.42-1.47 7.61-5.65 7.61-10.57C23.22 5.46 18.26.5 12 .5Z"/></svg>
+          <span>GitHub</span>
+        </a>
+      </nav>
+    </div>
+  </header>
+
+  <section id="home" class="pt-8 sm:pt-12 lg:pt-16">
+    <div class="max-w-6xl mx-auto px-4 flex flex-col-reverse lg:grid lg:grid-cols-2 gap-10 items-center">
+      <div class="space-y-5">
+        <h1 class="text-4xl md:text-5xl font-extrabold text-slate-900 leading-tight">Moo-tion</h1>
+        <p class="text-lg text-slate-600">Camera-Based Herd Management System</p>
+        <p class="text-slate-700">Moo-tion is a computer-vision-based system to support data-driven dairy farming. It detects estrus, predicts calving, and monitors cow activity using visual tags. Real-time alerts are sent when a cow is in heat, near calving, or missing—helping farmers save time and improve animal welfare.</p>
+        <ul class="list-disc pl-5 text-slate-700 space-y-1">
+          <li>Automatic estrus detection</li>
+          <li>Calving prediction</li>
+          <li>Activity tracking & missing alerts</li>
+        </ul>
+        
+        <div class="flex flex-col sm:flex-row gap-3">
+          <a href="#team" class="btn-primary inline-block w-full sm:w-auto text-center sm:text-left">View Team</a>
+          <a href="#reports" class="btn-secondary inline-block w-full sm:w-auto text-center sm:text-left">Reports</a>
+        </div>
+        
+        <div class="text-sm text-slate-500">
+          <p class="mt-1">Bilkent University — Computer Science Department<br>CS491 Senior Design Project I (Fall 2025)</p>
+        </div>
+      </div>
+      <div class="relative">
+        <div class="aspect-video rounded-2xl border border-slate-200 shadow-sm">
+          <img src="assets/images/placeholder.png" alt="System Workflow" class="w-full h-full object-cover rounded-2xl">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="team" class="section">
+    <div class="container">
+      <h2 class="section-title">Team</h2>
+      <p class="section-subtitle">Team of 5 members. Course instructors and supervisor listed below.</p>
+
+      <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 mt-6">
+        <div class="card p-5">
+          <h3 class="font-semibold">Emir Eroğlu</h3>
+          <p class="text-sm text-slate-600">ID: 22202233</p>
+          <p class="mt-2"><a href="mailto:emir.eroglu@ug.bilkent.edu.tr" class="text-blue-700">emir.eroglu@ug.bilkent.edu.tr</a></p>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold">Canberk Özba</h3>
+          <p class="text-sm text-slate-600">ID: 22101815</p>
+          <p class="mt-2"><a href="mailto:canberk.ozba@ug.bilkent.edu.tr" class="text-blue-700">canberk.ozba@ug.bilkent.edu.tr</a></p>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold">Muhammed Enes Şahin</h3>
+          <p class="text-sm text-slate-600">ID: 22102919</p>
+          <p class="mt-2"><a href="mailto:muhammed.sahin@ug.bilkent.edu.tr" class="text-blue-700">muhammed.sahin@ug.bilkent.edu.tr</a></p>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold">Ahmet Burak Kılıçkaya</h3>
+          <p class="text-sm text-slate-600">ID: 22103833</p>
+          <p class="mt-2"><a href="mailto:burak.kilickaya@ug.bilkent.edu.tr" class="text-blue-700">burak.kilickaya@ug.bilkent.edu.tr</a></p>
+        </div>
+
+        <div class="card p-5">
+          <h3 class="font-semibold">Mert Özkaya</h3>
+          <p class="text-sm text-slate-600">ID: 22002460</p>
+          <p class="mt-2"><a href="mailto:mert.ozkaya@ug.bilkent.edu.tr" class="text-blue-700">mert.ozkaya@ug.bilkent.edu.tr</a></p>
+        </div>
+      </div>
+
+      <div class="mt-8 grid md:grid-cols-2 gap-6">
+        <div class="p-5 rounded-xl border border-slate-200 bg-white shadow-sm">
+          <h4 class="font-semibold">Supervisor</h4>
+          <p class="text-sm text-slate-600">Doruk Öner — doruk.oner@cs.bilkent.edu.tr</p>
+        </div>
+        <div class="p-5 rounded-xl border border-slate-200 bg-white shadow-sm">
+          <h4 class="font-semibold">Course Instructors</h4>
+          <p class="text-sm text-slate-600">İlker Burak Kurt &amp; Mert Bıçakçı</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="reports" class="section alt">
+    <div class="container">
+      <h2 class="section-title">Reports</h2>
+      <p class="section-subtitle">CS491 deliverables.</p>
+
+      <div class="space-y-4 mt-6">
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 border rounded-xl bg-white shadow-sm">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-green-50 flex-none flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="#E6F9EC"/>
+                <path d="M7.5 12.5l2.2 2.2 6.3-6.3" stroke="#0F9D58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold">Project Information Form</h3>
+              <div class="text-sm text-slate-500">Deadline: Oct 24, 2025</div>
+            </div>
+          </div>
+          <div class="w-full sm:w-auto">
+            <a href="assets/reports/Project_Information_Form.pdf" target="_blank" rel="noopener" class="inline-flex justify-center w-full sm:w-auto items-center gap-2 px-4 py-2 rounded-md bg-slate-800 text-white">📄 View PDF</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 border rounded-xl bg-white shadow-sm">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-green-50 flex-none flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="#E6F9EC"/>
+                <path d="M7.5 12.5l2.2 2.2 6.3-6.3" stroke="#0F9D58" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold">Assessment of Innovation Form</h3>
+              <div class="text-sm text-slate-500">Deadline: Oct 24, 2025</div>
+            </div>
+          </div>
+          <div class="w-full sm:w-auto">
+            <a href="assets/reports/Assessment_of_Innovation.pdf" target="_blank" rel="noopener" class="inline-flex justify-center w-full sm:w-auto items-center gap-2 px-4 py-2 rounded-md bg-slate-800 text-white">📄 View PDF</a>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 border rounded-xl bg-white shadow-sm opacity-80">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-slate-50 flex-none flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="#F1F5F9"/>
+                <path d="M12 7v5l3 2" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold">Project Specification Report</h3>
+              <div class="text-sm text-slate-500">Deadline: Nov 21, 2025</div>
+            </div>
+          </div>
+          <div class="w-full sm:w-auto">
+            <span class="inline-flex justify-center w-full sm:w-auto items-center gap-2 px-4 py-2 rounded-md border text-slate-500">📄 Coming Soon</span>
+          </div>
+        </div>
+
+        <div class="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4 p-4 border rounded-xl bg-white shadow-sm opacity-80">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-slate-50 flex-none flex items-center justify-center">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="12" cy="12" r="11" fill="#F1F5F9"/>
+                <path d="M12 7v5l3 2" stroke="#9CA3AF" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"/>
+              </svg>
+            </div>
+            <div>
+              <h3 class="font-semibold">Analysis &amp; Requirements Report</h3>
+              <div class="text-sm text-slate-500">Deadline: Dec 12, 2025</div>
+            </div>
+          </div>
+          <div class="w-full sm:w-auto">
+            <span class="inline-flex justify-center w-full sm:w-auto items-center gap-2 px-4 py-2 rounded-md border text-slate-500">📄 Coming Soon</span>
+          </div>
+        </div>
+      </div>
+
+      <p class="text-sm text-slate-500 mt-4">Reports will be updated as the project progresses throughout Fall 2025.</p>
+    </div>
+  </section>
+
+  <section id="course" class="section">
+    <div class="container">
+      <h2 class="section-title">Course</h2>
+      <p class="section-subtitle mb-6">CS491 Senior Design Project I — Fall 2025 • Bilkent University Computer Science</p>
+
+      <div class="grid md:grid-cols-2 gap-6">
+        <div class="card">
+          <h3 class="font-semibold mb-6">Overview</h3>
+          <p class="text-sm text-slate-700">CS491 is the capstone design course at Bilkent University where small teams (3–5 students) design, implement, and deliver an applied engineering project under faculty supervision. The course emphasizes practical system design, teamwork, documentation, and regular deliverables: project registration, innovation assessment, specification, analysis, and a final demo. Projects are expected to produce reproducible artifacts (reports, code, and demos) and follow good software and research practices.</p>
+          <p class="text-sm mt-3">For the official course description and policies, see the CS491 course page: <a href="https://www.cs.bilkent.edu.tr/~cs4912/current/CS491.html" class="text-blue-700 hover:underline" target="_blank" rel="noopener">CS491 — Course Page</a></p>
+        </div>
+        <div class="card">
+          <h3 class="font-semibold mb-2">Important Dates (2025)</h3>
+          
+          <ul class="space-y-3 text-sm mt-4">
+            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+              <span class="font-medium text-slate-800">Project Information Form</span>
+              <span class="text-slate-600 sm:text-right">Oct 24, 10:00</span>
+            </li>
+            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+              <span class="font-medium text-slate-800">Assessment of Innovation</span>
+              <span class="text-slate-600 sm:text-right">Oct 24, 10:00</span>
+            </li>
+            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+              <span class="font-medium text-slate-800">Project Specification Report</span>
+              <span class="text-slate-600 sm:text-right">Nov 21, 10:00</span>
+            </li>
+            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+              <span class="font-medium text-slate-800">Analysis &amp; Requirements Report</span>
+              <span class="text-slate-600 sm:text-right">Dec 12, 10:00</span>
+            </li>
+            <li class="flex flex-col sm:flex-row sm:justify-between sm:items-center">
+              <span class="font-medium text-slate-800">Presentation &amp; Demo</span>
+              <span class="text-slate-600 sm:text-right">Final Week</span>
+            </li>
+          </ul>
+
+          <a class="inline-block mt-4 text-blue-700 hover:underline text-sm" href="https://www.cs.bilkent.edu.tr/~cs4912/current/CS491_deliverables.html" id="cs491Link" target="_blank" rel="noopener">CS491 Deliverables & Deadlines (2025)</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <footer class="py-8 border-t border-slate-200">
+    <div class="max-w-6xl mx-auto px-4 text-sm text-slate-600">
+      <div class="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-3">
+        <div>© 2025 Moo-tion Team — Bilkent University Computer Science Department</div>
+        <div>Last updated: <span id="last-updated">08-Oct-2025</span></div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/script.js"></script>
+
+</body>
+</html>
