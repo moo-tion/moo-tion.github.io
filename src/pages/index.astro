@@ -1,0 +1,20 @@
+---
+import Layout from '../layouts/Layout.astro';
+import Navbar from '../components/Navbar.astro';
+import Hero from '../components/Hero.astro';
+import ReactSections from '../components/ReactSections.tsx';
+import Footer from '../components/Footer.astro';
+---
+
+<Layout>
+  <Navbar />
+
+  <main>
+    <Hero />
+
+    <div class="section-divider"></div>
+    <ReactSections client:load />
+  </main>
+
+  <Footer />
+</Layout>
