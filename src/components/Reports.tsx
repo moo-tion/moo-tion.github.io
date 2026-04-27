@@ -1,5 +1,5 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import { CheckCircle2, Clock, ExternalLink, Download, FileText } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from './LanguageSwitcher';
@@ -11,18 +11,20 @@ interface Report {
 
 const reports: Report[] = [
   {
-    status: 'completed',
-    pdfUrl: '/reports/Project_Information_Form.pdf',
-  },
-  {
-    status: 'completed',
-    pdfUrl: '/reports/Assessment_of_Innovation.pdf',
+    status: 'coming-soon',
+    pdfUrl: '/reports/project-specification-document.pdf',
   },
   {
     status: 'coming-soon',
+    pdfUrl: '/reports/analysis-and-requirement-report.pdf',
   },
   {
     status: 'coming-soon',
+    pdfUrl: '/reports/detailed-design-report.pdf',
+  },
+  {
+    status: 'coming-soon',
+    pdfUrl: '/reports/final-report.pdf',
   },
 ];
 
@@ -31,6 +33,34 @@ export default function Reports() {
   const isInView = useInView(ref, { once: true, margin: '-80px' });
   const { t } = useLanguage();
   const r = t.reports;
+  const [availableReports, setAvailableReports] = useState<Record<string, boolean>>({});
+
+  useEffect(() => {
+    let isMounted = true;
+
+    Promise.all(
+      reports.map(async (report) => {
+        if (!report.pdfUrl) return ['', false] as const;
+
+        try {
+          const response = await fetch(report.pdfUrl, { method: 'HEAD' });
+          return [report.pdfUrl, response.ok] as const;
+        } catch {
+          return [report.pdfUrl, false] as const;
+        }
+      })
+    ).then((entries) => {
+      if (!isMounted) return;
+
+      setAvailableReports(
+        Object.fromEntries(entries.filter(([url]) => url))
+      );
+    });
+
+    return () => {
+      isMounted = false;
+    };
+  }, []);
 
   return (
     <section id="reports" className="relative py-14 sm:py-16 overflow-hidden" ref={ref}>
@@ -64,9 +94,13 @@ export default function Reports() {
 
         {/* Report Cards Grid */}
         <div className="grid sm:grid-cols-2 gap-5 max-w-5xl mx-auto">
-          {reports.map((report, i) => (
-            <motion.div
-              key={r.items[i].title}
+          {reports.map((report, i) => {
+            const isAvailable = report.pdfUrl ? availableReports[report.pdfUrl] === true : report.status === 'completed';
+            const status = isAvailable ? 'completed' : 'coming-soon';
+
+            return (
+              <motion.div
+                key={r.items[i].title}
               initial={{ opacity: 0, y: 24 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
               transition={{
@@ -75,7 +109,7 @@ export default function Reports() {
                 ease: [0.25, 0.4, 0.25, 1],
               }}
               className={`cow-report-card group relative flex min-h-[220px] flex-col overflow-hidden rounded-[18px] border border-primary/12 bg-gradient-to-br from-white via-[#fbfaf4] to-[#eef8e8] shadow-[0_14px_34px_rgba(23,33,26,0.075)] transition duration-200 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_48px_rgba(22,138,69,0.14)] ${
-                report.status === 'coming-soon' ? 'opacity-70' : ''
+                status === 'coming-soon' ? 'opacity-70' : ''
               }`}
             >
               <img
@@ -94,7 +128,7 @@ export default function Reports() {
                   {r.items[i].title}
                   </h3>
                 </div>
-                {report.status === 'completed' ? (
+                {status === 'completed' ? (
                   <span className="inline-flex flex-none items-center gap-1.5 rounded-full bg-green-500/10 border border-green-500/20 px-3 py-1 text-xs font-medium text-green-500">
                     <CheckCircle2 className="h-3.5 w-3.5" strokeWidth={2} />
                     {r.completed}
@@ -116,7 +150,7 @@ export default function Reports() {
 
               {/* Action */}
               <div className="mt-auto">
-                {report.status === 'completed' && report.pdfUrl ? (
+                {status === 'completed' && report.pdfUrl ? (
                   <div className="flex flex-wrap gap-2">
                     <a
                       href={report.pdfUrl}
@@ -145,7 +179,8 @@ export default function Reports() {
               </div>
               </div>
             </motion.div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Footer note */}
