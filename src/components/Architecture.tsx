@@ -52,17 +52,17 @@ export default function Architecture() {
         <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
           {architecture.items.map((item, i) => (
             <AnimatedSection key={item.name} delay={0.05 * i}>
-              <div className={`group relative h-full min-h-[150px] overflow-hidden rounded-[18px] border border-primary/15 bg-gradient-to-br ${cardStyles[i]} p-5 shadow-[0_14px_34px_rgba(23,33,26,0.07)] transition duration-200 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_48px_rgba(22,138,69,0.14)]`}>
+              <div className={`architecture-card group relative h-full min-h-[150px] overflow-hidden rounded-[18px] border border-primary/15 bg-gradient-to-br ${cardStyles[i]} p-5 shadow-[0_14px_34px_rgba(23,33,26,0.07)] transition duration-200 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_48px_rgba(22,138,69,0.14)]`}>
                 <img
                   src="/cows/cow_icon.png"
                   alt=""
-                  className="absolute -right-4 -top-4 h-16 w-16 opacity-[0.08] transition duration-200 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-[0.14]"
+                  className="architecture-watermark absolute -right-4 -top-4 h-16 w-16 opacity-[0.08] transition duration-200 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-[0.14]"
                 />
                 <div className="absolute inset-x-5 bottom-0 h-1 rounded-t-full bg-gradient-to-r from-primary/0 via-primary/45 to-primary/0" />
                 {(() => {
                   const Icon = iconMap[item.icon];
                   return (
-                    <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/10 bg-white/85 text-primary shadow-sm backdrop-blur">
+                    <div className="architecture-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/10 bg-white/85 text-primary shadow-sm backdrop-blur">
                       <Icon className="h-5 w-5" strokeWidth={2} />
                     </div>
                   );

@@ -1,4 +1,5 @@
 import { useState, useEffect, createContext, useContext } from 'react';
+import { Languages, Moon, Sun } from 'lucide-react';
 import type { Locale, Translations } from '../i18n/translations';
 import { translations } from '../i18n/translations';
 
@@ -52,12 +53,44 @@ export default function LanguageSwitcher() {
   return (
     <button
       onClick={toggleLocale}
-      className="cow-button flex items-center gap-1.5 rounded-full px-3 py-1.5 text-xs font-bold transition-all duration-200 uppercase tracking-wider"
+      className="control-button flex h-10 items-center gap-2 rounded-full px-3 text-xs font-bold transition-all duration-200"
       aria-label={locale === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç'}
       title={locale === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç'}
     >
-      <img src="/cows/cow_icon.png" alt="" className="h-4 w-4 rounded-full bg-white/85 p-0.5" />
+      <Languages className="h-4 w-4" strokeWidth={2.2} />
       {locale === 'tr' ? 'EN' : 'TR'}
+    </button>
+  );
+}
+
+export function ThemeToggle() {
+  const [isDark, setIsDark] = useState(false);
+
+  useEffect(() => {
+    const saved = localStorage.getItem('mootion-theme');
+    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const nextIsDark = saved ? saved === 'dark' : prefersDark;
+    setIsDark(nextIsDark);
+    document.documentElement.classList.toggle('dark', nextIsDark);
+  }, []);
+
+  const toggleTheme = () => {
+    setIsDark((current) => {
+      const next = !current;
+      document.documentElement.classList.toggle('dark', next);
+      localStorage.setItem('mootion-theme', next ? 'dark' : 'light');
+      return next;
+    });
+  };
+
+  return (
+    <button
+      onClick={toggleTheme}
+      className="control-button flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200"
+      aria-label={isDark ? 'Açık moda geç' : 'Koyu moda geç'}
+      title={isDark ? 'Açık moda geç' : 'Koyu moda geç'}
+    >
+      {isDark ? <Sun className="h-4 w-4" strokeWidth={2.2} /> : <Moon className="h-4 w-4" strokeWidth={2.2} />}
     </button>
   );
 }

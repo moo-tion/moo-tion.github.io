@@ -1,5 +1,5 @@
 import { LanguageProvider } from './LanguageSwitcher';
-import LanguageSwitcher from './LanguageSwitcher';
+import LanguageSwitcher, { ThemeToggle } from './LanguageSwitcher';
 import ProblemSolution from './ProblemSolution';
 import Features from './Features';
 import SystemDemo from './SystemDemo';
@@ -16,9 +16,9 @@ import FinalCTA from './FinalCTA';
 export default function ReactSections() {
   return (
     <LanguageProvider>
-      {/* Floating language switcher */}
-      <div className="fixed bottom-6 right-6 z-50">
+      <div className="fixed bottom-6 right-6 z-50 flex items-center gap-2 rounded-full border border-border bg-bg-card/90 p-1.5 shadow-[0_16px_38px_rgba(23,33,26,0.12)] backdrop-blur-xl">
         <LanguageSwitcher />
+        <ThemeToggle />
       </div>
 
       <div className="section-divider" />

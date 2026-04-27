@@ -81,13 +81,13 @@ export default function Reports() {
               <img
                 src="/cows/cow_icon.png"
                 alt=""
-                className="absolute -bottom-5 -right-4 h-24 w-24 opacity-[0.07] transition duration-200 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-[0.13]"
+                className="cow-card-watermark absolute -bottom-5 -right-4 h-24 w-24 opacity-[0.07] transition duration-200 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-[0.13]"
               />
               <div className="absolute left-0 top-0 h-full w-1 bg-gradient-to-b from-primary via-lime-400 to-primary/20" />
               <div className="relative flex flex-1 flex-col p-5 pl-6">
               <div className="mb-5 flex items-start justify-between gap-4">
                 <div className="flex gap-3">
-                  <div className="flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-primary/10 bg-white/80 text-primary shadow-sm backdrop-blur">
+                  <div className="report-icon flex h-11 w-11 flex-none items-center justify-center rounded-xl border border-primary/10 bg-white/80 text-primary shadow-sm backdrop-blur">
                     <FileText className="h-5 w-5" strokeWidth={2} />
                   </div>
                   <h3 className="pr-2 text-lg font-black leading-snug text-text-primary">
@@ -108,7 +108,7 @@ export default function Reports() {
               </div>
 
               <div className="mb-5 text-xs text-text-muted">
-                <div className="rounded-xl border border-border bg-white/75 px-4 py-3 backdrop-blur">
+                <div className="report-meta rounded-xl border border-border bg-white/75 px-4 py-3 backdrop-blur">
                   <span className="block text-[11px] font-bold uppercase tracking-widest text-primary">{r.deadline}</span>
                   {r.items[i].deadline}
                 </div>
@@ -137,7 +137,7 @@ export default function Reports() {
                     </a>
                   </div>
                 ) : (
-                  <span className="inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-5 py-2.5 text-sm font-medium text-text-muted cursor-default">
+                  <span className="report-pending inline-flex items-center gap-2 rounded-full border border-border bg-white/70 px-5 py-2.5 text-sm font-medium text-text-muted cursor-default">
                     <Clock className="h-4 w-4" strokeWidth={2} />
                     {r.pending}
                   </span>

@@ -7,11 +7,13 @@ import {
   Bell,
   CalendarClock,
   BarChart3,
+  HeartPulse,
+  Cctv,
 } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from './LanguageSwitcher';
 
-const featureIcons = [Camera, WifiOff, Activity, Bell, CalendarClock, BarChart3];
+const featureIcons = [Camera, Cctv, WifiOff, Activity, Bell, CalendarClock, HeartPulse, BarChart3];
 const featureGradients = [
   'bg-white',
   'bg-[#fbfaf4]',
@@ -19,21 +21,27 @@ const featureGradients = [
   'bg-[#f7fbf4]',
   'bg-white',
   'bg-[#fbfaf4]',
+  'bg-white',
+  'bg-[#f7fbf4]',
 ];
 const featureIconColors = [
   'text-blue-400',
+  'text-cyan-400',
   'text-violet-400',
   'text-amber-400',
   'text-green-400',
   'text-pink-400',
+  'text-rose-400',
   'text-teal-400',
 ];
 const featureIconBgs = [
   'bg-blue-500/10',
+  'bg-cyan-500/10',
   'bg-violet-500/10',
   'bg-amber-500/10',
   'bg-green-500/10',
   'bg-pink-500/10',
+  'bg-rose-500/10',
   'bg-teal-500/10',
 ];
 
@@ -73,7 +81,7 @@ export default function Features() {
         </AnimatedSection>
 
         {/* Feature Grid */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
           {f.items.map((feature, i) => {
             const Icon = featureIcons[i];
             return (
@@ -86,13 +94,9 @@ export default function Features() {
                   duration: 0.6,
                   ease: [0.25, 0.4, 0.25, 1],
                 }}
-                className={`group relative overflow-hidden rounded-[12px] border border-transparent bg-gradient-to-br from-primary/25 via-border to-transparent p-px transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_22px_54px_rgba(23,33,26,0.12)] ${
-                  i === 0 ? 'lg:col-span-2 lg:row-span-2' : ''
-                }`}
+                className="group relative overflow-hidden rounded-[12px] border border-transparent bg-gradient-to-br from-primary/25 via-border to-transparent p-px transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_22px_54px_rgba(23,33,26,0.12)]"
               >
-                <div className={`h-full rounded-[12px] ${i === 0 ? 'bg-gradient-to-br from-primary/12 via-white to-lime-50' : featureGradients[i]} p-5 shadow-sm sm:p-6 ${
-                  i === 0 ? 'min-h-[300px]' : i < 3 ? 'min-h-[230px]' : 'min-h-[190px]'
-                }`}>
+                <div className={`flex h-full min-h-[230px] flex-col rounded-[12px] ${featureGradients[i]} p-5 shadow-sm sm:p-6`}>
                   {i === 0 && (
                     <span className="mb-4 inline-flex rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
                       {f.coreFeature}

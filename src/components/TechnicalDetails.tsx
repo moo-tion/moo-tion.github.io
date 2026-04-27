@@ -41,8 +41,8 @@ export default function TechnicalDetails() {
             const Icon = icons[i];
             return (
               <AnimatedSection key={item.label} delay={0.05 * i}>
-                <div className="h-full rounded-[12px] border border-border bg-gradient-to-br from-white to-[#f8fbf2] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_42px_rgba(23,33,26,0.1)]">
-                  <div className="mb-5 flex h-12 w-12 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
+                <div className="technical-card h-full rounded-[12px] border border-border bg-gradient-to-br from-white to-[#f8fbf2] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_42px_rgba(23,33,26,0.1)]">
+                  <div className="technical-icon mb-5 flex h-12 w-12 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
                     <Icon className="h-5 w-5" strokeWidth={2} />
                   </div>
                   <p className="text-xs font-bold uppercase tracking-widest text-text-muted">

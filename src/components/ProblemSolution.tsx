@@ -66,8 +66,8 @@ export default function ProblemSolution() {
         </AnimatedSection>
 
         <AnimatedSection delay={0.1} className="mb-10 sm:mb-12">
-          <div className="overflow-hidden rounded-[12px] border border-border bg-gradient-to-br from-white to-[#f8fbf2] shadow-sm">
-            <div className="grid grid-cols-[1fr_auto_1fr] border-b border-border bg-[#fbfaf4] px-5 py-3 text-sm font-bold">
+          <div className="problem-panel overflow-hidden rounded-[12px] border border-border shadow-sm">
+            <div className="problem-panel-header grid grid-cols-[1fr_auto_1fr] border-b border-border px-5 py-3 text-sm font-bold">
               <span className="text-red-500">{ps.problemLabel}</span>
               <span />
               <span className="text-primary">{ps.solutionLabel}</span>
@@ -83,7 +83,7 @@ export default function ProblemSolution() {
                     initial={{ opacity: 0, y: 18 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.12 + i * 0.08, duration: 0.45 }}
-                    className="grid gap-4 p-4 transition hover:-translate-y-1 hover:bg-white/70 hover:shadow-[0_14px_34px_rgba(23,33,26,0.08)] md:grid-cols-[1fr_auto_1fr] md:items-center"
+                    className="problem-row grid gap-4 p-4 transition hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(23,33,26,0.08)] md:grid-cols-[1fr_auto_1fr] md:items-center"
                   >
                     <div className="flex gap-3 border-l-4 border-red-400 pl-4">
                       <div className="flex h-10 w-10 flex-none items-center justify-center rounded-[8px] bg-red-500/10">

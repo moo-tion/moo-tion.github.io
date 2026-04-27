@@ -2,7 +2,6 @@ export type Locale = 'tr' | 'en';
 
 export const translations = {
   tr: {
-    // Navbar
     nav: {
       home: 'Ana Sayfa',
       features: 'Özellikler',
@@ -12,33 +11,31 @@ export const translations = {
       architecture: 'Mimari',
     },
 
-    // Hero
     hero: {
       badge: 'Senior Year Project — Bilkent Üniversitesi',
       headline1: 'Yapay Zeka Destekli ',
       headlineHighlight: 'Kızgınlık Tespiti',
       headline2: 'Akıllı Çiftçilik İçin',
       subtitle:
-        'Bilgisayarlı görü tabanlı sürü yönetim sistemi: kızgınlık tespiti, doğum tahmini ve inek aktivite takibi — giyilebilir sensör gerektirmez.',
+        'Moo-tion, kamera görüntülerinden yararlanarak kızgınlık belirtilerini tespit eden, doğum sürecini öngörmeye yardımcı olan ve sürü aktivitesini takip eden bilgisayarlı görü tabanlı bir sistemdir. Giyilebilir sensör gerektirmez.',
       ctaReports: 'Raporları Gör',
       ctaTeam: 'Ekibi Gör',
       ctaDemo: 'Sistem Demosu',
       statMonitoring: 'Gerçek Zamanlı İzleme',
-      statMonitoringValue: '24/7',
+      statMonitoringValue: '7/24',
       statCamera: 'Kamera Tabanlı',
       statCameraValue: 'CV',
       statSensor: 'Giyilebilir Sensör Yok',
       statSensorValue: '0',
-      statAnalysis: 'AI Davranış Analizi',
-      statAnalysisValue: '120ms',
+      statAnalysis: 'Yapay Zeka Analizi',
+      statAnalysisValue: '120 ms',
       mockupLive: 'Canlı kamera akışı',
       mockupAlert: 'Kızgınlık riski',
       mockupAction: 'Mobil uyarı hazır',
-      proofLine: 'Gerçek ahır görüntüleriyle test edildi • Gerçek zamanlı çıkarım',
+      proofLine: 'Gerçek ahır görüntüleriyle test edilir, sonuçlar anlık olarak değerlendirilir.',
       scroll: 'Kaydır',
     },
 
-    // Problem & Solution
     problemSolution: {
       sectionLabel: 'Neden Moo-tion?',
       sectionTitle1: 'Çözdüğümüz ',
@@ -47,163 +44,144 @@ export const translations = {
       solutionLabel: 'Çözümümüz',
       problems: [
         {
-          title: 'Kaçırılan Kızgınlık',
-          desc: 'Görsel gözlem, kızgınlık olaylarının yalnızca %50-60\'ını yakalayarak üreme fırsatlarının kaçırılmasına yol açar.',
+          title: 'Kaçırılan Kızgınlık Dönemleri',
+          desc: 'Sadece gözleme dayalı takipte kızgınlık belirtilerinin önemli bir kısmı kaçabilir; bu da doğru zamanda tohumlama şansını azaltır.',
         },
         {
-          title: 'Maddi Kayıp',
-          desc: 'Her kaçırılan döngü, geciken süt üretimi ve ek tohumlama maliyetleri nedeniyle 300-500$+ kayba yol açar.',
+          title: 'Ek Maliyet',
+          desc: 'Kaçırılan her döngü, geciken süt üretimi ve tekrar eden tohumlama süreçleri nedeniyle işletmeye yüzlerce dolar ek yük getirebilir.',
         },
         {
-          title: 'Yoğun İş Gücü',
-          desc: 'Geleneksel izleme 7/24 manuel gözlem gerektirir, bu büyük sürüler için pratik değildir.',
+          title: 'Sürekli Takip Zorluğu',
+          desc: 'Büyük sürülerde 7/24 manuel gözlem yapmak hem yorucu hem de sürdürülebilir değildir.',
         },
       ],
       solutions: [
         {
           title: 'Model Destekli Tespit',
-          desc: 'Bilgisayarlı görü hattı, manuel gözlemde kaçabilecek davranış sinyallerini görünür hale getirir.',
+          desc: 'Bilgisayarlı görü hattı, manuel gözlem sırasında fark edilmesi zor olan davranış sinyallerini görünür hale getirir.',
         },
         {
-          title: 'Anlık Uyarılar',
-          desc: 'Kızgınlık davranışı tespit edildiğinde çiftçilere anında bildirim — gece gündüz.',
+          title: 'Anlık Bildirimler',
+          desc: 'Kızgınlık davranışı algılandığında çiftçiye zaman kaybetmeden uyarı gönderilir.',
         },
         {
-          title: 'Non-İnvaziv',
-          desc: 'Giyilebilir sensör veya fiziksel temas gerektirmez. Tamamen kamera tabanlı görsel izleme.',
+          title: 'Temassız İzleme',
+          desc: 'Hayvanların üzerine cihaz takmadan, yalnızca kamera görüntüsü üzerinden izleme yapılır.',
         },
       ],
       pipelineTitle1: 'Nasıl ',
       pipelineTitleHighlight: 'Çalışır',
-      pipelineSubtitle: 'Uçtan uca tespit hattımız',
+      pipelineSubtitle: 'Kameradan uyarıya uzanan tespit akışı',
       pipelineSteps: ['Kamera', 'Tespit', 'Davranış Analizi', 'Kızgınlık Tahmini', 'Akıllı Uyarı'],
       pipelineLatency: ['Anlık', '<1 ms/kare', '~120 ms', 'Gerçek zamanlı', 'Mobil'],
     },
 
-    // Features
     features: {
       sectionLabel: 'Özellikler',
       sectionTitle1: 'Akıllı İzleme İçin ',
-      sectionTitleHighlight: 'Her Şey',
-      sectionSubtitle: 'Modern süt çiftliği yönetimi için eksiksiz yapay zeka çözümü.',
+      sectionTitleHighlight: 'Gerekenler',
+      sectionSubtitle: 'Modern süt çiftlikleri için kamera tabanlı, anlaşılır ve uygulanabilir bir yapay zeka çözümü.',
       coreFeature: 'Temel Özellik',
       items: [
         {
           title: 'Gerçek Zamanlı Tespit',
-          description: 'YOLO tabanlı modeller kullanarak inekleri gerçek zamanlı tanımlama ve takip eden sürekli video akışı analizi.',
+          description: 'Video akışı sürekli analiz edilir; inekler YOLO tabanlı modellerle görüntü üzerinde tespit ve takip edilir.',
+        },
+        {
+          title: 'Canlı Kamera Takibi',
+          description: 'Çiftlikteki kamera görüntüleri canlı olarak izlenir; sistem önemli davranış değişimlerini anında görünür hale getirir.',
         },
         {
           title: 'Sensör Gerektirmez',
-          description: 'Tamamen kamera tabanlı izleme, hayvanlar üzerindeki fiziksel cihaz ihtiyacını ortadan kaldırarak stresi ve maliyeti azaltır.',
+          description: 'Hayvanların üzerine fiziksel cihaz takılmadığı için stres ve bakım maliyeti azalır.',
         },
         {
           title: 'Davranış Analizi',
-          description: 'Poz tahmini ve hareket kalıpları ile atlama, huzursuzluk ve diğer kızgınlığa özgü davranışları takip eder.',
+          description: 'Hareket örüntüleri ve poz bilgisi kullanılarak kızgınlığa işaret edebilecek davranışlar değerlendirilir.',
         },
         {
           title: 'Akıllı Uyarılar',
-          description: 'Kızgınlık tespit edildiğinde mobil cihazınıza güven puanları ve önerilen eylemlerle anlık bildirim.',
+          description: 'Risk yükseldiğinde mobil cihaza güven puanı ve önerilen aksiyonla birlikte bildirim gönderilir.',
         },
         {
           title: 'Doğum Tahmini',
-          description: 'Davranış değişikliklerine dayalı beklenen doğum tarihlerini tahmin ederek çiftçilerin önceden hazırlanmasına yardımcı olur.',
+          description: 'Davranış değişiklikleri izlenerek yaklaşan doğum süreci için erken hazırlık yapılmasına yardımcı olunur.',
+        },
+        {
+          title: 'Hayvan Sağlığı Takibi',
+          description: 'Doğum öncesi kontroller ve koruyucu aşı takvimi gibi sağlık adımlarının düzenli takip edilmesine yardımcı olur.',
         },
         {
           title: 'Aktivite Paneli',
-          description: 'Sürü sağlık metrikleri, aktivite trendleri ve geçmiş verileri gösteren kapsamlı analiz panosu.',
+          description: 'Sürü aktivitesi, geçmiş uyarılar ve eğilimler tek bir panelden takip edilebilir.',
         },
       ],
     },
 
-    // Demo
     demo: {
       sectionLabel: 'Sistem Akışı',
       sectionTitle1: 'Kameradan ',
       sectionTitleHighlight: 'Uyarıya',
-      sectionSubtitle: 'Jürinin sistemi tek bakışta anlaması için uçtan uca demo akışı.',
-      videoTitle: 'Statik sistem görünümü',
+      sectionSubtitle: 'Demo videosu, kamera görüntüsünün nasıl analiz edilip anlaşılır bir mobil uyarıya dönüştüğünü adım adım gösterir.',
+      videoTitle: 'Sistem görünümü',
       watchVideo: 'YouTube’da İzle',
       latencyBadge: '~120 ms gecikme hedefi',
       notificationTitle: 'Moo-tion uyarısı',
       notificationBody: 'Cow #17 için kızgınlık sinyali incelenmeli.',
       timeline: ['Tespit', 'Davranış', 'Uyarı'],
       items: [
-        {
-          title: 'Kamera Akışı',
-          description: 'Kamera görüntüsü alınır.',
-        },
-        {
-          title: 'İnek Tespiti',
-          description: 'İnekler kutularla işaretlenir.',
-        },
-        {
-          title: 'Kızgınlık Sinyali',
-          description: 'Davranış riski hesaplanır.',
-        },
-        {
-          title: 'Mobil Bildirim',
-          description: 'Çiftçiye uyarı gönderilir.',
-        },
+        { title: 'Kamera Akışı', description: 'Kamera görüntüsü sisteme alınır.' },
+        { title: 'İnek Tespiti', description: 'İnekler görüntü üzerinde işaretlenir.' },
+        { title: 'Kızgınlık Sinyali', description: 'Davranış riski hesaplanır.' },
+        { title: 'Mobil Bildirim', description: 'Çiftçiye anlaşılır bir uyarı gönderilir.' },
       ],
     },
 
-    // Reports
     reports: {
       sectionLabel: 'Teslimler',
       sectionTitle1: 'Proje ',
       sectionTitleHighlight: 'Raporları',
-      sectionSubtitle: 'Senior Year Project teslim ve belgeleri.',
+      sectionSubtitle: 'Senior Year Project kapsamında hazırlanan raporlar ve teslimler.',
       completed: 'Tamamlandı',
       comingSoon: 'Yakında',
       deadline: 'Son Tarih',
       viewPdf: 'PDF Görüntüle',
       pending: 'Beklemede',
-      footerNote: 'Raporlar, Senior Year Project ilerledikçe güncellenir.',
+      footerNote: 'Raporlar proje ilerledikçe güncellenir.',
       previewLabel: 'Belge önizlemesi',
       previewAction: 'Önizle',
       downloadAction: 'İndir',
       type: 'Tür',
       reportType: 'PDF rapor',
       items: [
-        {
-          title: 'Proje Bilgi Formu',
-          deadline: '24 Ekim 2025',
-        },
-        {
-          title: 'Yenilik Değerlendirmesi',
-          deadline: '24 Ekim 2025',
-        },
-        {
-          title: 'Proje Şartname Raporu',
-          deadline: '21 Kasım 2025',
-        },
-        {
-          title: 'Analiz ve Gereksinimler Raporu',
-          deadline: '12 Aralık 2025',
-        },
+        { title: 'Proje Bilgi Formu', deadline: '24 Ekim 2025' },
+        { title: 'Yenilik Değerlendirmesi', deadline: '24 Ekim 2025' },
+        { title: 'Proje Şartname Raporu', deadline: '21 Kasım 2025' },
+        { title: 'Analiz ve Gereksinimler Raporu', deadline: '12 Aralık 2025' },
       ],
     },
 
-    // Team
     team: {
       sectionLabel: 'Ekibimiz',
       sectionTitle1: 'Ekibi ',
       sectionTitleHighlight: 'Tanıyın',
-      sectionSubtitle: 'Bilkent Üniversitesi Bilgisayar Mühendisliği öğrencileri, süt çiftçiliğinin geleceğini inşa ediyor.',
+      sectionSubtitle: 'Bilkent Üniversitesi Bilgisayar Mühendisliği öğrencileri, süt çiftlikleri için görüntü tabanlı karar destek sistemi geliştiriyor.',
       supervisor: 'Danışman',
       instructors: 'Ders Sorumluları',
+      innovationExpert: 'Innovation Expert',
+      photoPlaceholder: 'Fotoğraf alanı',
       github: 'GitHub',
     },
 
-    // Architecture
     architecture: {
       sectionLabel: 'Mimari',
       sectionTitle1: 'Sistemi Taşıyan ',
       sectionTitleHighlight: 'Teknoloji',
-      sectionSubtitle: 'Kamera akışından mobil uyarıya kadar yalın ve anlaşılır bir ürün hattı.',
+      sectionSubtitle: 'Kamera akışından mobil uyarıya kadar sade ve anlaşılır bir ürün hattı.',
       items: [
         { name: 'Flutter', role: 'Mobil uygulama ve çiftçi bildirim arayüzü', icon: 'mobile' },
-        { name: 'FastAPI', role: 'Model çıktıları ve uygulama API katmanı', icon: 'api' },
+        { name: 'FastAPI', role: 'Model çıktıları ve uygulama verileri için API katmanı', icon: 'api' },
         { name: 'YOLO', role: 'Kamera görüntüsünde inek tespiti', icon: 'target' },
         { name: 'OpenCV', role: 'Görüntü işleme ve davranış sinyali hazırlığı', icon: 'vision' },
         { name: 'PostgreSQL', role: 'Sürü, uyarı ve geçmiş kayıt verisi', icon: 'database' },
@@ -214,7 +192,7 @@ export const translations = {
       sectionLabel: 'Teknik Detaylar',
       sectionTitle1: 'Model ve ',
       sectionTitleHighlight: 'Performans',
-      sectionSubtitle: 'Jüri için teknik varsayımlar ve ölçüm noktaları açıkça gösterilir.',
+      sectionSubtitle: 'Jüri için teknik varsayımlar ve ölçüm noktaları açık şekilde gösterilir.',
       items: [
         { label: 'Model', value: 'YOLO tabanlı tespit hattı' },
         { label: 'Kare gecikmesi', value: '<1 ms / kare hedefi' },
@@ -228,10 +206,9 @@ export const translations = {
       subtitle: 'Kod, raporlar ve demo videosu tek yerden erişilebilir.',
       github: 'GitHub’u İncele',
       reports: 'Raporları Gör',
-      demo: 'Demo Videosu İzle',
+      demo: 'Demo Videosunu İzle',
     },
 
-    // Footer
     footer: {
       project: 'Senior Year Project',
       university: 'Bilkent Üniversitesi — Bilgisayar Mühendisliği Bölümü',
@@ -241,7 +218,6 @@ export const translations = {
   },
 
   en: {
-    // Navbar
     nav: {
       home: 'Home',
       features: 'Features',
@@ -251,14 +227,13 @@ export const translations = {
       architecture: 'Architecture',
     },
 
-    // Hero
     hero: {
       badge: 'Senior Year Project — Bilkent University',
       headline1: 'AI-Powered ',
       headlineHighlight: 'Estrus Detection',
       headline2: 'for Smart Farming',
       subtitle:
-        'A computer-vision-based herd management system that detects estrus, predicts calving, and monitors cow activity using visual tags — no wearable sensors required.',
+        'Moo-tion is a computer-vision-based herd management system that detects estrus signals, supports calving prediction, and monitors cow activity without wearable sensors.',
       ctaReports: 'View Reports',
       ctaTeam: 'View Team',
       ctaDemo: 'System Demo',
@@ -269,172 +244,152 @@ export const translations = {
       statSensor: 'No Wearable Sensor',
       statSensorValue: '0',
       statAnalysis: 'AI Behavior Analysis',
-      statAnalysisValue: '120ms',
+      statAnalysisValue: '120 ms',
       mockupLive: 'Live camera feed',
       mockupAlert: 'Estrus risk',
       mockupAction: 'Mobile alert ready',
-      proofLine: 'Tested on real barn footage • Real-time inference',
+      proofLine: 'Tested with real barn footage and evaluated in real time.',
       scroll: 'Scroll',
     },
 
-    // Problem & Solution
     problemSolution: {
       sectionLabel: 'Why Moo-tion?',
-      sectionTitle1: 'The Problem We\'re ',
+      sectionTitle1: 'The Problem We’re ',
       sectionTitleHighlight: 'Solving',
-      problemLabel: 'The Problem',
+      problemLabel: 'Problem',
       solutionLabel: 'Our Solution',
       problems: [
         {
-          title: 'Missed Estrus',
-          desc: 'Visual observation catches only 50-60% of estrus events, leading to missed breeding opportunities.',
+          title: 'Missed Estrus Events',
+          desc: 'Observation-based monitoring can miss important estrus signals, reducing the chance of timely insemination.',
         },
         {
-          title: 'Financial Loss',
-          desc: 'Each missed cycle costs $300-500+ in delayed milk production and additional insemination costs.',
+          title: 'Added Cost',
+          desc: 'Each missed cycle can create hundreds of dollars in additional cost through delayed milk production and repeated insemination.',
         },
         {
-          title: 'Labor Intensive',
-          desc: 'Traditional monitoring requires 24/7 manual observation, which is impractical for large herds.',
+          title: 'Hard to Monitor Continuously',
+          desc: 'Manual 24/7 observation is tiring and difficult to sustain, especially in larger herds.',
         },
       ],
       solutions: [
         {
           title: 'Model-assisted Detection',
-          desc: 'The computer-vision pipeline surfaces behavior signals that can be missed during manual observation.',
+          desc: 'The computer-vision pipeline surfaces behavior signals that are easy to miss during manual observation.',
         },
         {
-          title: 'Real-time Alerts',
-          desc: 'Instant notifications to farmers when estrus behavior is detected — day or night.',
+          title: 'Instant Alerts',
+          desc: 'Farmers receive timely alerts when the system detects behavior that may indicate estrus.',
         },
         {
-          title: 'Non-Invasive',
-          desc: 'No wearable sensors or physical contact needed. Pure camera-based visual monitoring.',
+          title: 'Contactless Monitoring',
+          desc: 'The system works through camera footage only, without attaching devices to animals.',
         },
       ],
       pipelineTitle1: 'How It ',
       pipelineTitleHighlight: 'Works',
-      pipelineSubtitle: 'Our end-to-end detection pipeline',
+      pipelineSubtitle: 'An end-to-end flow from camera feed to alert',
       pipelineSteps: ['Camera Feed', 'Detection', 'Behavior Analysis', 'Estrus Prediction', 'Smart Alert'],
       pipelineLatency: ['Instant', '<1 ms/frame', '~120 ms', 'Real-time', 'Mobile'],
     },
 
-    // Features
     features: {
       sectionLabel: 'Features',
-      sectionTitle1: 'Everything You Need for ',
+      sectionTitle1: 'Everything Needed for ',
       sectionTitleHighlight: 'Smart Monitoring',
-      sectionSubtitle: 'A complete AI-powered solution for modern dairy farm management.',
+      sectionSubtitle: 'A practical camera-based AI solution for modern dairy farm management.',
       coreFeature: 'Core Feature',
       items: [
         {
           title: 'Real-time Detection',
-          description: 'Continuous video stream analysis using YOLO-based models to identify and track individual cows in real time.',
+          description: 'The video stream is analyzed continuously, and cows are detected and tracked using YOLO-based models.',
+        },
+        {
+          title: 'Live Camera Monitoring',
+          description: 'Live barn camera feeds can be monitored continuously while the system surfaces important behavior changes in real time.',
         },
         {
           title: 'No Wearable Sensors',
-          description: 'Pure camera-based monitoring eliminates the need for physical devices on animals, reducing stress and cost.',
+          description: 'Camera-based monitoring reduces stress and maintenance cost by removing the need for devices on animals.',
         },
         {
           title: 'Behavior Analysis',
-          description: 'Tracks mounting, restlessness, and other estrus-specific behaviors through pose estimation and motion patterns.',
+          description: 'Motion patterns and pose information are used to evaluate behaviors that may indicate estrus.',
         },
         {
           title: 'Smart Alerts',
-          description: 'Push notifications to your mobile device when estrus is detected, with confidence scores and recommended actions.',
+          description: 'When risk increases, the mobile app sends a notification with a confidence score and suggested action.',
         },
         {
           title: 'Calving Prediction',
-          description: 'Predicts expected calving dates based on behavioral changes, helping farmers prepare in advance.',
+          description: 'Behavior changes are monitored to help farmers prepare earlier for the calving period.',
+        },
+        {
+          title: 'Animal Health Tracking',
+          description: 'Helps farmers keep track of prenatal checks, preventive vaccination schedules, and other routine health steps.',
         },
         {
           title: 'Activity Dashboard',
-          description: 'Comprehensive analytics dashboard showing herd health metrics, activity trends, and historical data.',
+          description: 'Herd activity, alert history, and trends can be followed from a single dashboard.',
         },
       ],
     },
 
-    // Demo
     demo: {
       sectionLabel: 'System Flow',
       sectionTitle1: 'From Camera ',
       sectionTitleHighlight: 'to Alert',
-      sectionSubtitle: 'A clear end-to-end demo flow for showing the system to the jury.',
-      videoTitle: 'Static system mockup',
+      sectionSubtitle: 'The demo video shows how camera footage is analyzed and turned into a clear mobile alert, step by step.',
+      videoTitle: 'System view',
       watchVideo: 'Watch on YouTube',
       latencyBadge: '~120 ms latency target',
       notificationTitle: 'Moo-tion alert',
-      notificationBody: 'Cow #17 should be reviewed for estrus signal.',
+      notificationBody: 'Cow #17 should be reviewed for an estrus signal.',
       timeline: ['Detection', 'Behavior', 'Alert'],
       items: [
-        {
-          title: 'Camera Feed',
-          description: 'Camera footage is received.',
-        },
-        {
-          title: 'Cow Detection',
-          description: 'Cows are marked with boxes.',
-        },
-        {
-          title: 'Estrus Signal',
-          description: 'Behavior risk is calculated.',
-        },
-        {
-          title: 'Mobile Notification',
-          description: 'An alert is sent to the farmer.',
-        },
+        { title: 'Camera Feed', description: 'Camera footage is received by the system.' },
+        { title: 'Cow Detection', description: 'Cows are marked on the video frame.' },
+        { title: 'Estrus Signal', description: 'Behavior risk is calculated.' },
+        { title: 'Mobile Notification', description: 'A clear alert is sent to the farmer.' },
       ],
     },
 
-    // Reports
     reports: {
       sectionLabel: 'Deliverables',
       sectionTitle1: 'Project ',
       sectionTitleHighlight: 'Reports',
-      sectionSubtitle: 'Senior Year Project deliverables and documentation.',
+      sectionSubtitle: 'Reports and deliverables prepared for the Senior Year Project.',
       completed: 'Completed',
       comingSoon: 'Coming Soon',
       deadline: 'Deadline',
       viewPdf: 'View PDF',
       pending: 'Pending',
-      footerNote: 'Reports are updated as the Senior Year Project progresses.',
+      footerNote: 'Reports are updated as the project progresses.',
       previewLabel: 'Document preview',
       previewAction: 'Preview',
       downloadAction: 'Download',
       type: 'Type',
       reportType: 'PDF report',
       items: [
-        {
-          title: 'Project Information Form',
-          deadline: 'October 24, 2025',
-        },
-        {
-          title: 'Assessment of Innovation',
-          deadline: 'October 24, 2025',
-        },
-        {
-          title: 'Project Specification Report',
-          deadline: 'November 21, 2025',
-        },
-        {
-          title: 'Analysis & Requirements Report',
-          deadline: 'December 12, 2025',
-        },
+        { title: 'Project Information Form', deadline: 'October 24, 2025' },
+        { title: 'Assessment of Innovation', deadline: 'October 24, 2025' },
+        { title: 'Project Specification Report', deadline: 'November 21, 2025' },
+        { title: 'Analysis & Requirements Report', deadline: 'December 12, 2025' },
       ],
     },
 
-    // Team
     team: {
       sectionLabel: 'Our Team',
       sectionTitle1: 'Meet the ',
       sectionTitleHighlight: 'Team',
-      sectionSubtitle: 'Bilkent University Computer Engineering students building the future of dairy farming.',
+      sectionSubtitle: 'Bilkent University Computer Engineering students building a vision-based decision support system for dairy farms.',
       supervisor: 'Supervisor',
       instructors: 'Course Instructors',
+      innovationExpert: 'Innovation Expert',
+      photoPlaceholder: 'Photo slot',
       github: 'GitHub',
     },
 
-    // Architecture
     architecture: {
       sectionLabel: 'Architecture',
       sectionTitle1: 'Technology Behind ',
@@ -453,7 +408,7 @@ export const translations = {
       sectionLabel: 'Technical Details',
       sectionTitle1: 'Model and ',
       sectionTitleHighlight: 'Performance',
-      sectionSubtitle: 'Technical assumptions and measurement points are visible for the jury.',
+      sectionSubtitle: 'Technical assumptions and measurement points are clearly visible for the jury.',
       items: [
         { label: 'Model', value: 'YOLO-based detection pipeline' },
         { label: 'Frame latency', value: '<1 ms / frame target' },
@@ -470,10 +425,9 @@ export const translations = {
       demo: 'Watch Demo Video',
     },
 
-    // Footer
     footer: {
       project: 'Senior Year Project',
-      university: 'Bilkent University — Computer Science Department',
+      university: 'Bilkent University — Computer Engineering Department',
       course: 'Senior Year Project',
       lastUpdated: 'Last updated',
     },
