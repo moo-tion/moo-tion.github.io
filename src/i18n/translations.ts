@@ -172,6 +172,10 @@ export const translations = {
       photoPlaceholder: 'Fotoğraf alanı',
       github: 'GitHub',
       linkedin: 'LinkedIn',
+      groupPhotoTitle: 'Moo-tion Ekibi',
+      groupPhotoSubtitle: 'Ekip fotoğrafına tıklayın; kart döner ve ekip üyeleri ile iletişim bilgileri görünür.',
+      flipHint: 'Kartı çevir',
+      backToGroup: 'Grup fotoğrafına dön',
     },
 
     architecture: {
@@ -388,6 +392,10 @@ export const translations = {
       photoPlaceholder: 'Photo slot',
       github: 'GitHub',
       linkedin: 'LinkedIn',
+      groupPhotoTitle: 'Moo-tion Team',
+      groupPhotoSubtitle: 'Click the group photo; the card flips to reveal team members and contact links.',
+      flipHint: 'Flip card',
+      backToGroup: 'Back to group photo',
     },
 
     architecture: {

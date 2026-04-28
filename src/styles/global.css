@@ -78,6 +78,74 @@ html.dark body {
   transform: translateY(-4px);
 }
 
+.team-flip-back {
+  background:
+    linear-gradient(180deg, #fffdf7 0%, #f8fbf2 46%, #ffffff 100%);
+}
+
+.team-photo-panel {
+  position: relative;
+  min-height: 620px;
+  background:
+    linear-gradient(180deg, #fffdf7 0%, #f8fbf2 46%, #ffffff 100%);
+}
+
+.team-overlay-card {
+  border: 1px solid rgba(255, 255, 255, 0.22);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.26);
+  box-shadow: 0 14px 32px rgba(0, 0, 0, 0.08);
+  opacity: 0.36;
+  filter: grayscale(0.22) saturate(0.75);
+  transform: translateY(10px) scale(0.985);
+  transition: opacity 260ms ease, filter 260ms ease, transform 260ms ease, border-color 260ms ease, box-shadow 260ms ease, background 260ms ease;
+}
+
+.team-overlay-card:hover,
+.team-overlay-card:focus-within {
+  opacity: 1;
+  filter: none;
+  transform: translateY(-4px) scale(1.015);
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(22, 138, 69, 0.34);
+  box-shadow: 0 22px 52px rgba(23, 33, 26, 0.16);
+}
+
+html.dark .team-flip-back {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(110, 211, 111, 0.12), transparent 28%),
+    radial-gradient(circle at 82% 20%, rgba(88, 145, 233, 0.10), transparent 26%),
+    linear-gradient(180deg, #101613 0%, #142019 52%, #0e1411 100%);
+}
+
+html.dark .team-photo-panel {
+  background:
+    radial-gradient(circle at 18% 16%, rgba(110, 211, 111, 0.12), transparent 28%),
+    radial-gradient(circle at 82% 20%, rgba(88, 145, 233, 0.10), transparent 26%),
+    linear-gradient(180deg, #101613 0%, #142019 52%, #0e1411 100%);
+}
+
+html.dark .team-overlay-card {
+  background: rgba(22, 31, 26, 0.34);
+  border-color: rgba(222, 238, 220, 0.14);
+  box-shadow: 0 18px 42px rgba(0, 0, 0, 0.28);
+}
+
+html.dark .team-overlay-card:hover,
+html.dark .team-overlay-card:focus-within {
+  background: rgba(22, 31, 26, 0.9);
+  border-color: rgba(110, 211, 111, 0.44);
+}
+
+html.dark .team-flip-light-cow {
+  display: none;
+}
+
+html.dark .team-flip-dark-cow {
+  display: block;
+  filter: invert(1) brightness(1.16) drop-shadow(0 14px 18px rgba(110, 211, 111, 0.14));
+}
+
 .problem-panel {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.86), rgba(248, 251, 242, 0.92));

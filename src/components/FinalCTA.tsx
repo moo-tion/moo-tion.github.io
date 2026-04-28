@@ -9,14 +9,24 @@ export default function FinalCTA() {
 
   return (
     <section className="relative overflow-hidden px-4 py-14 sm:px-6 lg:px-8">
-      <img
-        src="/cows/cow.gif"
-        alt=""
-        className="cow-gif-accent left-[6%] top-[18%] hidden lg:block"
-        style={{ width: '5.4rem', opacity: 0.048, transform: 'rotate(-8deg)' }}
-      />
-      <div className="animate-gradient relative mx-auto max-w-7xl rounded-[12px] border border-border bg-[linear-gradient(110deg,#17211a,#0f2e1d_42%,#168a45_72%,#1aa858)] px-6 py-9 text-white shadow-[0_24px_70px_rgba(23,33,26,0.18)] sm:px-10">
-        <div className="grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
+      <div className="animate-gradient relative mx-auto max-w-7xl overflow-hidden rounded-[12px] border border-border bg-[linear-gradient(110deg,#17211a,#0f2e1d_42%,#168a45_72%,#1aa858)] px-6 py-9 text-white shadow-[0_24px_70px_rgba(23,33,26,0.18)] sm:px-10">
+        <img
+          src="/cows/cow_icon.png"
+          alt=""
+          className="pointer-events-none absolute -right-8 bottom-[-3.4rem] z-0 h-48 w-48 rotate-[-10deg] object-contain opacity-22 sm:h-60 sm:w-60 lg:right-[27%] lg:opacity-26"
+        />
+        <img
+          src="/cows/cow_icon.png"
+          alt=""
+          className="pointer-events-none absolute left-5 top-1 z-0 hidden h-24 w-24 rotate-[12deg] object-contain opacity-18 sm:block"
+        />
+        <img
+          src="/cows/cow_icon.png"
+          alt=""
+          className="pointer-events-none absolute right-8 top-3 z-0 hidden h-16 w-16 rotate-[20deg] object-contain opacity-16 lg:block"
+        />
+        <div className="absolute inset-0 z-0 bg-[radial-gradient(circle_at_78%_62%,rgba(255,255,255,0.16),transparent_26%),linear-gradient(90deg,rgba(23,33,26,0.34),transparent_58%)]" />
+        <div className="relative z-10 grid gap-8 lg:grid-cols-[1fr_auto] lg:items-center">
           <div>
             <h2 className="text-3xl font-extrabold sm:text-4xl">{cta.title}</h2>
             <p className="mt-3 max-w-2xl font-semibold text-white/86">{cta.subtitle}</p>
