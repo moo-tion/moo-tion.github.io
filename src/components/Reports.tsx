@@ -141,9 +141,8 @@ export default function Reports() {
                 )}
               </div>
 
-              <div className="mb-5 text-xs text-text-muted">
-                <div className="report-meta rounded-xl border border-border bg-white/75 px-4 py-3 backdrop-blur">
-                  <span className="block text-[11px] font-bold uppercase tracking-widest text-primary">{r.deadline}</span>
+              <div className="mb-5 text-xs">
+                <div className="report-meta rounded-xl border border-primary/20 bg-primary/5 px-4 py-3 font-bold text-primary shadow-[inset_0_1px_0_rgba(255,255,255,0.45)] backdrop-blur">
                   {r.items[i].deadline}
                 </div>
               </div>
