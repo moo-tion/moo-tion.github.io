@@ -68,8 +68,7 @@ export function ThemeToggle() {
 
   useEffect(() => {
     const saved = localStorage.getItem('mootion-theme');
-    const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-    const nextIsDark = saved ? saved === 'dark' : prefersDark;
+    const nextIsDark = saved === 'dark';
     setIsDark(nextIsDark);
     document.documentElement.classList.toggle('dark', nextIsDark);
   }, []);

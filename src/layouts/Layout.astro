@@ -37,8 +37,7 @@ const {
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <script is:inline>
       const savedTheme = localStorage.getItem('mootion-theme');
-      const prefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-      if (savedTheme === 'dark' || (!savedTheme && prefersDark)) {
+      if (savedTheme === 'dark') {
         document.documentElement.classList.add('dark');
       }
     </script>

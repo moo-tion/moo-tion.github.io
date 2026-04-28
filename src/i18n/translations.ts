@@ -169,9 +169,10 @@ export const translations = {
       sectionSubtitle: 'Bilkent Üniversitesi Bilgisayar Mühendisliği öğrencileri, süt çiftlikleri için görüntü tabanlı karar destek sistemi geliştiriyor.',
       supervisor: 'Danışman',
       instructors: 'Ders Sorumluları',
-      innovationExpert: 'Innovation Expert',
+      innovationExpert: 'İnovasyon Uzmanı',
       photoPlaceholder: 'Fotoğraf alanı',
       github: 'GitHub',
+      linkedin: 'LinkedIn',
     },
 
     architecture: {
@@ -388,6 +389,7 @@ export const translations = {
       innovationExpert: 'Innovation Expert',
       photoPlaceholder: 'Photo slot',
       github: 'GitHub',
+      linkedin: 'LinkedIn',
     },
 
     architecture: {
