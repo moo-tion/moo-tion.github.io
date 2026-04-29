@@ -67,7 +67,7 @@ export default function Features() {
       />
       <div className="relative mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <AnimatedSection className="text-center mb-8">
+        <AnimatedSection className="text-center mb-6 sm:mb-8">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
             {f.sectionLabel}
           </p>
@@ -75,13 +75,13 @@ export default function Features() {
             {f.sectionTitle1}
             <span className="gradient-text">{f.sectionTitleHighlight}</span>
           </h2>
-          <p className="mt-4 max-w-2xl mx-auto text-text-secondary text-lg font-medium">
+          <p className="mt-3 max-w-2xl mx-auto text-text-secondary text-base font-medium leading-7 sm:mt-4 sm:text-lg">
             {f.sectionSubtitle}
           </p>
         </AnimatedSection>
 
         {/* Feature Grid */}
-        <div className="grid sm:grid-cols-2 xl:grid-cols-4 gap-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-5 xl:grid-cols-4">
           {f.items.map((feature, i) => {
             const Icon = featureIcons[i];
             return (
@@ -96,21 +96,21 @@ export default function Features() {
                 }}
                 className="group relative overflow-hidden rounded-[12px] border border-transparent bg-gradient-to-br from-primary/25 via-border to-transparent p-px transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_22px_54px_rgba(23,33,26,0.12)]"
               >
-                <div className={`flex h-full min-h-[230px] flex-col rounded-[12px] ${featureGradients[i]} p-5 shadow-sm sm:p-6`}>
+                <div className={`flex h-full min-h-[178px] flex-col rounded-[12px] ${featureGradients[i]} p-3.5 shadow-sm sm:min-h-[230px] sm:p-6`}>
                   {i === 0 && (
-                    <span className="mb-4 inline-flex rounded-full bg-primary px-3 py-1 text-xs font-bold text-white">
+                    <span className="mb-3 inline-flex self-start rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold text-white sm:mb-4 sm:px-3 sm:text-xs">
                       {f.coreFeature}
                     </span>
                   )}
                   <div
-                    className={`flex h-11 w-11 items-center justify-center rounded-[8px] ${featureIconBgs[i]} mb-5 group-hover:scale-110 transition-transform duration-300`}
+                    className={`mb-3 flex h-9 w-9 items-center justify-center rounded-[8px] ${featureIconBgs[i]} group-hover:scale-110 transition-transform duration-300 sm:mb-5 sm:h-11 sm:w-11`}
                   >
-                    <Icon className={`h-5 w-5 ${featureIconColors[i]}`} strokeWidth={2} />
+                    <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${featureIconColors[i]}`} strokeWidth={2} />
                   </div>
-                  <h3 className="text-lg font-semibold text-text-primary mb-2">
+                  <h3 className="mb-1.5 text-sm font-semibold leading-snug text-text-primary sm:mb-2 sm:text-lg">
                     {feature.title}
                   </h3>
-                  <p className="text-sm text-text-secondary leading-relaxed">
+                  <p className="text-xs leading-5 text-text-secondary sm:text-sm sm:leading-relaxed">
                     {feature.description}
                   </p>
                 </div>
