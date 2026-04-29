@@ -67,9 +67,9 @@ export default function ProblemSolution() {
 
         <AnimatedSection delay={0.1} className="mb-10 sm:mb-12">
           <div className="problem-panel overflow-hidden rounded-[12px] border border-border shadow-sm">
-            <div className="problem-panel-header grid grid-cols-[1fr_auto_1fr] border-b border-border px-5 py-3 text-sm font-bold">
+            <div className="problem-panel-header grid grid-cols-2 border-b border-border px-4 py-3 text-sm font-bold sm:px-5 md:grid-cols-[1fr_auto_1fr]">
               <span className="text-red-500">{ps.problemLabel}</span>
-              <span />
+              <span className="hidden md:block" />
               <span className="text-primary">{ps.solutionLabel}</span>
             </div>
             <div className="divide-y divide-border">
@@ -91,7 +91,7 @@ export default function ProblemSolution() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-text-primary">{problem.title}</h3>
-                        <p className="mt-1 line-clamp-2 text-sm leading-6 text-text-secondary">{emphasizeMetrics(problem.desc)}</p>
+                        <p className="mt-1 text-sm leading-6 text-text-secondary md:line-clamp-2">{emphasizeMetrics(problem.desc)}</p>
                       </div>
                     </div>
                     <span className="connection-line mx-auto" />
@@ -101,7 +101,7 @@ export default function ProblemSolution() {
                       </div>
                       <div>
                         <h3 className="font-semibold text-text-primary">{solution.title}</h3>
-                        <p className="mt-1 line-clamp-2 text-sm leading-6 text-text-secondary">{solution.desc}</p>
+                        <p className="mt-1 text-sm leading-6 text-text-secondary md:line-clamp-2">{solution.desc}</p>
                       </div>
                     </div>
                   </motion.div>
@@ -113,33 +113,33 @@ export default function ProblemSolution() {
 
         {/* Pipeline */}
         <AnimatedSection delay={0.3}>
-          <div className="text-center mb-10">
+          <div className="text-center mb-6 sm:mb-10">
             <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
               {ps.pipelineTitle1}<span className="gradient-text">{ps.pipelineTitleHighlight}</span>
             </h3>
-            <p className="mt-2 font-medium text-text-secondary">{ps.pipelineSubtitle}</p>
+            <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-6 text-text-secondary sm:text-base">{ps.pipelineSubtitle}</p>
           </div>
 
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-4 sm:gap-2">
+          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-2">
             {ps.pipelineSteps.map((label, i) => {
               const Icon = pipelineIcons[i];
               return (
                 <motion.div
                   key={i}
-                  className="flex items-center gap-2 sm:gap-2"
+                  className={`flex items-center justify-center gap-2 ${i === ps.pipelineSteps.length - 1 ? 'col-span-2 mx-auto w-1/2 min-w-[9rem] sm:col-span-1 sm:w-auto sm:min-w-0' : ''}`}
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.5 + i * 0.12, duration: 0.5 }}
                 >
-                  <div className={`glass-card flex min-w-[120px] flex-col items-center gap-3 px-5 py-5 text-center sm:px-5 sm:py-5 ${pipelineColors[i]}`}>
+                  <div className={`glass-card flex w-full min-w-0 flex-col items-center gap-2 px-3 py-3.5 text-center sm:px-4 sm:py-4 lg:min-w-[120px] lg:gap-3 lg:px-5 lg:py-5 ${pipelineColors[i]}`}>
                     <span className="text-xs font-black text-primary/50">0{i + 1}</span>
-                    <div className="flex h-12 w-12 items-center justify-center rounded-[8px] bg-primary/10 border border-border">
-                      <Icon className="h-5 w-5 text-primary" strokeWidth={2} />
+                    <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 border border-border lg:h-12 lg:w-12">
+                      <Icon className="h-4 w-4 text-primary lg:h-5 lg:w-5" strokeWidth={2} />
                     </div>
-                    <span className="text-xs sm:text-sm font-medium text-text-primary whitespace-nowrap">
+                    <span className="text-xs sm:text-sm font-medium text-text-primary lg:whitespace-nowrap">
                       {label}
                     </span>
-                    <span className="rounded-full bg-primary/10 px-2 py-1 text-[10px] font-bold text-primary">
+                    <span className="rounded-full bg-primary/10 px-2 py-1 text-[9px] font-bold text-primary sm:text-[10px]">
                       {ps.pipelineLatency[i]}
                     </span>
                   </div>

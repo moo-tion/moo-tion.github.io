@@ -119,7 +119,7 @@ function TeamMemberCard({
         <div className="mt-1.5 flex flex-wrap gap-1.5">
           <a href={`mailto:${member.email}`} className="mt-1 inline-flex items-center gap-1 text-[10px] text-text-muted hover:text-primary transition-colors">
             <Mail className="h-3 w-3" strokeWidth={2} />
-            <span className="truncate max-w-[150px] lg:max-w-[120px]">{member.email}</span>
+            <span className="truncate max-w-[190px] sm:max-w-[150px] lg:max-w-[120px]">{member.email}</span>
           </a>
           <a href={member.github} target="_blank" rel="noopener noreferrer" className="mt-1 inline-flex items-center gap-1 text-[10px] text-text-muted hover:text-primary transition-colors">
             <svg className="h-3 w-3" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
@@ -182,7 +182,7 @@ export default function Team() {
           <div className="absolute inset-0 bg-[linear-gradient(180deg,rgba(23,33,26,0.02),rgba(23,33,26,0.38))]" />
         </motion.div>
 
-        <div className="mx-auto mt-6 grid max-w-3xl gap-4 sm:grid-cols-2 lg:grid-cols-6">
+        <div className="mx-auto mt-6 grid max-w-3xl grid-cols-2 gap-3 sm:gap-4 lg:grid-cols-6">
           {teamMembers.map((member, i) => (
             <TeamMemberCard
               key={member.name}

@@ -23,7 +23,7 @@ export default function TechnicalDetails() {
         style={{ width: '7.2rem', opacity: 0.053, transform: 'rotate(-5deg)' }}
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="mb-8 text-center">
+        <AnimatedSection className="mb-6 text-center sm:mb-8">
           <p className="mb-3 text-sm font-semibold uppercase tracking-widest text-primary">
             {technical.sectionLabel}
           </p>
@@ -31,24 +31,24 @@ export default function TechnicalDetails() {
             {technical.sectionTitle1}
             <span className="gradient-text">{technical.sectionTitleHighlight}</span>
           </h2>
-          <p className="mx-auto mt-4 max-w-2xl text-lg font-medium leading-8 text-text-secondary">
+          <p className="mx-auto mt-3 max-w-2xl text-base font-medium leading-7 text-text-secondary sm:mt-4 sm:text-lg sm:leading-8">
             {technical.sectionSubtitle}
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-4">
           {technical.items.map((item, i) => {
             const Icon = icons[i];
             return (
               <AnimatedSection key={item.label} delay={0.05 * i}>
-                <div className="technical-card h-full rounded-[12px] border border-border bg-gradient-to-br from-white to-[#f8fbf2] p-5 shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_42px_rgba(23,33,26,0.1)]">
-                  <div className="technical-icon mb-5 flex h-12 w-12 items-center justify-center rounded-[8px] bg-primary/10 text-primary">
-                    <Icon className="h-5 w-5" strokeWidth={2} />
+                <div className="technical-card h-full rounded-[12px] border border-border bg-gradient-to-br from-white to-[#f8fbf2] p-3.5 shadow-sm transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_18px_42px_rgba(23,33,26,0.1)] sm:p-5">
+                  <div className="technical-icon mb-3 flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 text-primary sm:mb-5 sm:h-12 sm:w-12">
+                    <Icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2} />
                   </div>
-                  <p className="text-xs font-bold uppercase tracking-widest text-text-muted">
+                  <p className="text-[10px] font-bold uppercase tracking-wider text-text-muted sm:text-xs sm:tracking-widest">
                     {item.label}
                   </p>
-                  <p className="mt-2 text-xl font-black text-text-primary">{item.value}</p>
+                  <p className="mt-1.5 text-base font-black leading-snug text-text-primary sm:mt-2 sm:text-xl">{item.value}</p>
                 </div>
               </AnimatedSection>
             );

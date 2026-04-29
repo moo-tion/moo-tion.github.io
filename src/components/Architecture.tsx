@@ -36,7 +36,7 @@ export default function Architecture() {
         style={{ width: '8rem', opacity: 0.052, transform: 'rotate(4deg)' }}
       />
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <AnimatedSection className="mb-8">
+        <AnimatedSection className="mb-6 sm:mb-8">
           <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
             {architecture.sectionLabel}
           </p>
@@ -44,30 +44,30 @@ export default function Architecture() {
             {architecture.sectionTitle1}
             <span className="gradient-text">{architecture.sectionTitleHighlight}</span>
           </h2>
-          <p className="mt-4 max-w-2xl text-text-secondary text-lg font-medium leading-8">
+          <p className="mt-3 max-w-2xl text-base font-medium leading-7 text-text-secondary sm:mt-4 sm:text-lg sm:leading-8">
             {architecture.sectionSubtitle}
           </p>
         </AnimatedSection>
 
-        <div className="grid gap-4 sm:grid-cols-2 lg:grid-cols-5">
+        <div className="grid grid-cols-2 gap-3 sm:grid-cols-2 sm:gap-4 lg:grid-cols-5">
           {architecture.items.map((item, i) => (
             <AnimatedSection key={item.name} delay={0.05 * i}>
-              <div className={`architecture-card group relative h-full min-h-[150px] overflow-hidden rounded-[18px] border border-primary/15 bg-gradient-to-br ${cardStyles[i]} p-5 shadow-[0_14px_34px_rgba(23,33,26,0.07)] transition duration-200 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_48px_rgba(22,138,69,0.14)]`}>
+              <div className={`architecture-card group relative h-full min-h-[112px] overflow-hidden rounded-[14px] border border-primary/15 bg-gradient-to-br ${cardStyles[i]} p-3.5 shadow-[0_14px_34px_rgba(23,33,26,0.07)] transition duration-200 hover:-translate-y-1 hover:border-primary/35 hover:shadow-[0_20px_48px_rgba(22,138,69,0.14)] sm:min-h-[150px] sm:rounded-[18px] sm:p-5`}>
                 <img
                   src="/cows/cow_icon.png"
                   alt=""
-                  className="architecture-watermark absolute -right-4 -top-4 h-16 w-16 opacity-[0.08] transition duration-200 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-[0.14]"
+                  className="architecture-watermark absolute -right-4 -top-4 h-12 w-12 opacity-[0.08] transition duration-200 group-hover:rotate-6 group-hover:scale-110 group-hover:opacity-[0.14] sm:h-16 sm:w-16"
                 />
                 <div className="absolute inset-x-5 bottom-0 h-1 rounded-t-full bg-gradient-to-r from-primary/0 via-primary/45 to-primary/0" />
                 {(() => {
                   const Icon = iconMap[item.icon];
                   return (
-                    <div className="architecture-icon mb-5 flex h-12 w-12 items-center justify-center rounded-xl border border-primary/10 bg-white/85 text-primary shadow-sm backdrop-blur">
-                      <Icon className="h-5 w-5" strokeWidth={2} />
+                    <div className="architecture-icon mb-3 flex h-10 w-10 items-center justify-center rounded-xl border border-primary/10 bg-white/85 text-primary shadow-sm backdrop-blur sm:mb-5 sm:h-12 sm:w-12">
+                      <Icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2} />
                     </div>
                   );
                 })()}
-                <div className="text-xl font-black text-text-primary">{item.name}</div>
+                <div className="text-sm font-black leading-snug text-text-primary sm:text-xl">{item.name}</div>
               </div>
             </AnimatedSection>
           ))}
