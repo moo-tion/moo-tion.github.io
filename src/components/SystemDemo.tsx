@@ -82,15 +82,15 @@ export default function SystemDemo() {
                     LIVE
                   </span>
                 </div>
-                <div className="mt-4 aspect-video rounded-[8px] border border-white/10 bg-[linear-gradient(135deg,#263826,#17211a)] p-5">
+                <div className="mt-4 aspect-video rounded-[8px] border border-white/10 bg-[#111812] p-5">
                   <div className="relative h-full overflow-hidden rounded-[8px] border border-white/15 bg-[#1d2a20] p-4">
-                    <div className="absolute inset-0 bg-[linear-gradient(135deg,#223726,#18251c)]" />
-                    <div className="absolute inset-0 opacity-35 grid-pattern" />
-                    <div className="bbox-pulse absolute left-[12%] top-[22%] h-[34%] w-[34%] rounded-[8px] border-2 border-primary" />
-                    <div className="absolute right-4 top-4 rounded-[12px] border border-white/15 bg-white p-3 text-text-primary shadow-lg">
-                      <p className="text-xs font-bold text-primary">{demo.notificationTitle}</p>
-                      <p className="mt-1 max-w-[180px] text-xs text-text-secondary">{demo.notificationBody}</p>
-                    </div>
+                    <img
+                      src="/demo_examples/estrus_1.jpeg"
+                      alt="Barn camera feed showing estrus detection on a cow"
+                      className="absolute inset-0 h-full w-full object-cover"
+                    />
+                    <div className="absolute inset-0 bg-black/15" />
+                    <div className="absolute inset-0 opacity-20 grid-pattern" />
                     <div className="absolute bottom-4 left-4 right-4 rounded-[8px] border border-white/15 bg-white/90 p-3">
                       <div className="flex items-center justify-between text-xs font-bold text-text-primary">
                         <span>{demo.timeline[0]}</span>

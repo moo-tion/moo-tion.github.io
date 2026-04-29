@@ -12,6 +12,7 @@ interface TeamMember {
   linkedin: string;
   gradient: string;
   photo: string;
+  photoClassName?: string;
 }
 
 const teamMembers: TeamMember[] = [
@@ -50,6 +51,7 @@ const teamMembers: TeamMember[] = [
     linkedin: 'https://www.linkedin.com/in/emir-eroglu/',
     gradient: 'from-blue-500 to-cyan-500',
     photo: '/team_photo/Emir_Eroglu_Photo.jpeg',
+    photoClassName: 'object-cover object-center',
   },
   {
     name: 'Muhammed Enes Şahin',
@@ -70,7 +72,7 @@ function TeamPhoto({ member, placeholder }: { member: TeamMember; placeholder: s
       <img
         src={member.photo}
         alt={member.name}
-        className="h-full w-full object-contain"
+        className={`h-full w-full ${member.photoClassName ?? 'object-contain'}`}
         onError={() => setHasPhoto(false)}
       />
     );
