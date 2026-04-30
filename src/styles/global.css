@@ -435,8 +435,33 @@ html.dark .report-pending {
   box-shadow: 0 0 0 4px rgba(22, 138, 69, 0.08);
 }
 
+.pipeline-connection-line {
+  display: none;
+  width: clamp(1.5rem, 3vw, 3.5rem);
+  height: 1px;
+  flex: none;
+  background: linear-gradient(90deg, transparent, rgba(22, 138, 69, 0.52), transparent);
+}
+
+.pipeline-connection-line::after {
+  content: "";
+  display: block;
+  width: 0.38rem;
+  height: 0.38rem;
+  margin: -0.16rem auto 0;
+  border-radius: 999px;
+  background: var(--color-primary);
+  box-shadow: 0 0 0 4px rgba(22, 138, 69, 0.08);
+}
+
 @media (min-width: 640px) {
   .connection-line {
+    display: block;
+  }
+}
+
+@media (min-width: 1024px) {
+  .pipeline-connection-line {
     display: block;
   }
 }

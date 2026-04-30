@@ -120,13 +120,13 @@ export default function ProblemSolution() {
             <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-6 text-text-secondary sm:text-base">{ps.pipelineSubtitle}</p>
           </div>
 
-          <div className="grid grid-cols-2 gap-3 sm:grid-cols-3 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-2">
+          <div className="grid grid-cols-2 gap-3 md:grid-cols-5 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-2">
             {ps.pipelineSteps.map((label, i) => {
               const Icon = pipelineIcons[i];
               return (
                 <motion.div
                   key={i}
-                  className={`flex items-center justify-center gap-2 ${i === ps.pipelineSteps.length - 1 ? 'col-span-2 mx-auto w-1/2 min-w-[9rem] sm:col-span-1 sm:w-auto sm:min-w-0' : ''}`}
+                  className="flex min-w-0 items-center justify-center gap-2"
                   initial={{ opacity: 0, y: 20 }}
                   animate={isInView ? { opacity: 1, y: 0 } : {}}
                   transition={{ delay: 0.5 + i * 0.12, duration: 0.5 }}
@@ -143,7 +143,7 @@ export default function ProblemSolution() {
                       {ps.pipelineLatency[i]}
                     </span>
                   </div>
-                  {i < ps.pipelineSteps.length - 1 && <span className="connection-line" />}
+                  {i < ps.pipelineSteps.length - 1 && <span className="pipeline-connection-line" />}
                 </motion.div>
               );
             })}
