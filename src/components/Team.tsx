@@ -1,6 +1,6 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef, useState } from 'react';
-import { Mail, GraduationCap, BookOpen, Lightbulb, Users } from 'lucide-react';
+import { Mail, GraduationCap, BookOpen, Lightbulb, Users, NotebookTabs, Download } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from './LanguageSwitcher';
 
@@ -10,6 +10,7 @@ interface TeamMember {
   initials: string;
   github: string;
   linkedin: string;
+  logbook: string;
   gradient: string;
   photo: string;
   photoClassName?: string;
@@ -22,6 +23,7 @@ const teamMembers: TeamMember[] = [
     initials: 'AK',
     github: 'https://github.com/ABKJgM',
     linkedin: 'https://linkedin.com/in/ahmet-burak-kilickaya',
+    logbook: '/logbooks/CS%20491_2%20Ahmet%20Burak%20K%C4%B1l%C4%B1c%CC%A7kaya%20Logbook.docx',
     gradient: 'from-rose-500 to-pink-500',
     photo: '/team_photo/Ahmet_Burak_Kilickaya_Photo.jpeg',
   },
@@ -31,6 +33,7 @@ const teamMembers: TeamMember[] = [
     initials: 'MÖ',
     github: 'https://github.com/Mertozkaya21',
     linkedin: 'https://www.linkedin.com/in/mertozkaya1/',
+    logbook: '/logbooks/CS%20491_2%20Mert%20O%CC%88zkaya%20Logbook.docx',
     gradient: 'from-green-500 to-emerald-500',
     photo: '/team_photo/Mert_Ozkaya_Photo.jpeg',
   },
@@ -40,6 +43,7 @@ const teamMembers: TeamMember[] = [
     initials: 'CO',
     github: 'https://github.com/Canberk-Ozba',
     linkedin: 'https://www.linkedin.com/in/canberk-%C3%B6zba-bb8b11386/',
+    logbook: '/logbooks/CS%20491_2%20Canberk%20O%CC%88zba%20Logbook.docx',
     gradient: 'from-sky-500 to-indigo-500',
     photo: '/team_photo/Canberk_Ozba_Photo.jpeg',
   },
@@ -49,6 +53,7 @@ const teamMembers: TeamMember[] = [
     initials: 'EE',
     github: 'https://github.com/emireroglu2k',
     linkedin: 'https://www.linkedin.com/in/emir-eroglu/',
+    logbook: '/logbooks/CS%20491_2%20Emir%20Erog%CC%86lu%20Logbook.docx',
     gradient: 'from-blue-500 to-cyan-500',
     photo: '/team_photo/Emir_Eroglu_Photo.jpeg',
     photoClassName: 'object-cover object-center',
@@ -59,6 +64,7 @@ const teamMembers: TeamMember[] = [
     initials: 'MS',
     github: 'https://github.com/Menesahin7',
     linkedin: 'https://www.linkedin.com/in/muhammed-enes-%C5%9Fahin-088469221/',
+    logbook: '/logbooks/CS%20491_2%20Muhammed%20Enes%20S%CC%A7ahin%20Logbook.docx',
     gradient: 'from-amber-500 to-orange-500',
     photo: '/team_photo/Muhammed_Enes_Sahin_Photo.jpeg',
   },
@@ -95,7 +101,7 @@ function TeamMemberCard({
   member: TeamMember;
   index: number;
   isInView: boolean;
-  labels: { photoPlaceholder: string; github: string; linkedin: string };
+  labels: { photoPlaceholder: string; github: string; linkedin: string; logbook: string; downloadLogbook: string };
   className?: string;
 }) {
   return (
@@ -134,6 +140,16 @@ function TeamMemberCard({
             <span>{labels.linkedin}</span>
           </a>
         </div>
+        <a
+          href={member.logbook}
+          download
+          className="mt-3 inline-flex w-full items-center justify-center gap-1.5 rounded-full border border-primary/15 bg-primary/8 px-2.5 py-1.5 text-[10px] font-semibold text-primary transition-colors hover:border-primary/35 hover:bg-primary/12"
+          aria-label={`${labels.downloadLogbook}: ${member.name}`}
+        >
+          <NotebookTabs className="h-3.5 w-3.5 flex-none" strokeWidth={2} />
+          <span className="truncate">{labels.logbook}</span>
+          <Download className="h-3 w-3 flex-none" strokeWidth={2} />
+        </a>
       </div>
     </motion.div>
   );
@@ -189,7 +205,13 @@ export default function Team() {
               member={member}
               index={i}
               isInView={isInView}
-              labels={{ photoPlaceholder: tm.photoPlaceholder, github: tm.github, linkedin: tm.linkedin }}
+              labels={{
+                photoPlaceholder: tm.photoPlaceholder,
+                github: tm.github,
+                linkedin: tm.linkedin,
+                logbook: tm.logbook,
+                downloadLogbook: tm.downloadLogbook,
+              }}
               className={`mx-auto w-full max-w-[13rem] lg:col-span-2 ${i === 3 ? 'lg:col-start-2' : ''}`}
             />
           ))}

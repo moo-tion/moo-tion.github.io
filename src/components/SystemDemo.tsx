@@ -3,7 +3,7 @@ import { Fragment } from 'react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from './LanguageSwitcher';
 
-const demoUrl = 'https://www.youtube.com/';
+const demoUrl = 'https://www.youtube.com/watch?v=uhvhUnFRo8I';
 const icons = [Camera, Target, Bell, Smartphone];
 
 export default function SystemDemo() {

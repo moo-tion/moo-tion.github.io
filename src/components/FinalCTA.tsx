@@ -1,7 +1,7 @@
 import { Play, FileText } from 'lucide-react';
 import { useLanguage } from './LanguageSwitcher';
 
-const demoUrl = 'https://www.youtube.com/';
+const demoUrl = 'https://www.youtube.com/watch?v=uhvhUnFRo8I';
 
 export default function FinalCTA() {
   const { t } = useLanguage();

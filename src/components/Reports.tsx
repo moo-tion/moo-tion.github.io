@@ -24,7 +24,7 @@ const reports: Report[] = [
   },
   {
     status: 'coming-soon',
-    pdfUrl: '/reports/final-report.pdf',
+    pdfUrl: '/reports/T2517_Final_Report.pdf',
   },
 ];
 
