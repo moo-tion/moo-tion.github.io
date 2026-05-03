@@ -1,5 +1,4 @@
-import { Bell, Camera, Smartphone, Target } from 'lucide-react';
-import { Fragment } from 'react';
+import { Bell, Camera, Play, Smartphone, Target } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from './LanguageSwitcher';
 
@@ -11,18 +10,18 @@ export default function SystemDemo() {
   const demo = t.demo;
 
   return (
-    <section id="demo" className="relative py-14 sm:py-16 overflow-hidden">
+    <section id="demo" className="relative py-12 sm:py-16 overflow-hidden">
       <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
-        <div className="grid gap-8 lg:grid-cols-[0.92fr_1.08fr] lg:items-center">
-          <AnimatedSection>
-            <p className="text-sm font-semibold uppercase tracking-widest text-primary mb-3">
+        <div className="grid min-w-0 gap-7 lg:grid-cols-[1.08fr_0.92fr] lg:items-center xl:grid-cols-[1.12fr_0.88fr]">
+          <AnimatedSection className="min-w-0">
+            <p className="mb-2 text-xs font-semibold uppercase tracking-widest text-primary sm:mb-3 sm:text-sm">
               {demo.sectionLabel}
             </p>
-            <h2 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-text-primary">
+            <h2 className="text-2xl font-extrabold text-text-primary sm:text-4xl lg:text-5xl">
               {demo.sectionTitle1}
               <span className="gradient-text">{demo.sectionTitleHighlight}</span>
             </h2>
-            <p className="mt-4 max-w-xl text-text-secondary text-lg font-medium leading-8">
+            <p className="mt-3 max-w-xl text-sm font-medium leading-6 text-text-secondary sm:mt-4 sm:text-lg sm:leading-8">
               {demo.sectionSubtitle}
             </p>
 
@@ -30,73 +29,66 @@ export default function SystemDemo() {
               href={demoUrl}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex w-full items-center justify-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-white shadow-[0_14px_30px_rgba(22,138,69,0.22)] transition hover:-translate-y-0.5 hover:bg-primary-dark sm:w-auto"
+              className="mt-5 inline-flex max-w-full items-center justify-center gap-2 rounded-full bg-primary px-4 py-2.5 text-xs font-bold text-white shadow-[0_14px_30px_rgba(22,138,69,0.22)] transition hover:bg-primary-dark sm:mt-7 sm:px-6 sm:py-3 sm:text-sm"
             >
-              <span className="flex h-7 w-7 items-center justify-center rounded-full bg-red-600 text-white">▶</span>
+              <span className="flex h-6 w-6 flex-none items-center justify-center rounded-full bg-red-600 text-white sm:h-7 sm:w-7">
+                <Play className="h-3 w-3 fill-current sm:h-3.5 sm:w-3.5" />
+              </span>
               {demo.watchVideo}
             </a>
-          </AnimatedSection>
 
-          <AnimatedSection delay={0.1}>
-            <div className="rounded-[12px] border border-border bg-gradient-to-br from-white to-[#f8fbf2] p-4 shadow-[0_18px_50px_rgba(23,33,26,0.09)]">
-              <div className="mb-4 flex flex-wrap items-center justify-between gap-3">
-                <div className="flex w-full flex-wrap items-center justify-center gap-2 rounded-[12px] border border-border bg-[#fbfaf4] px-3 py-1.5 text-xs font-bold text-text-primary sm:w-auto sm:rounded-full sm:justify-start">
-                  {demo.timeline.map((item, i) => (
-                    <span key={item} className="inline-flex items-center gap-2">
-                      {item}
-                      {i < demo.timeline.length - 1 && <span className="hidden h-px w-8 bg-primary/35 sm:inline-flex" />}
-                    </span>
-                  ))}
-                </div>
-                <span className="rounded-full bg-primary px-3 py-1.5 text-xs font-bold text-white">
-                  {demo.latencyBadge}
-                </span>
-              </div>
-
-              <div className="grid grid-cols-2 gap-3 sm:grid-cols-[1fr_auto_1fr_auto_1fr_auto_1fr] sm:items-stretch">
+            <div className="demo-flow-window mt-6 overflow-x-auto pb-2 sm:mt-8 sm:overflow-visible sm:pb-0">
+              <ol className="demo-flow-timeline relative grid min-w-[34rem] grid-cols-4 gap-2 before:absolute before:left-[4.25rem] before:right-[4.25rem] before:top-4 before:h-px before:bg-primary/25 sm:min-w-0 sm:gap-3 sm:before:left-[4.75rem] sm:before:right-[4.75rem] sm:before:top-[1.125rem]">
                 {demo.items.map((item, i) => {
                   const Icon = icons[i];
                   return (
-                    <Fragment key={item.title}>
-                    <div className="active-step-glow relative rounded-[12px] border border-border bg-white/72 p-3 backdrop-blur-xl transition hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(23,33,26,0.1)] sm:p-4" style={{ animationDelay: `${i * 0.28}s` }}>
-                      <div className="flex h-9 w-9 items-center justify-center rounded-[8px] bg-primary/10 text-primary sm:h-10 sm:w-10">
-                        <Icon className="h-4 w-4 sm:h-5 sm:w-5" strokeWidth={2} />
+                    <li
+                      key={item.title}
+                      className="relative flex min-w-0 flex-col items-center"
+                      style={{ animationDelay: `${i * 0.28}s` }}
+                    >
+                      <div className="z-10 flex h-8 w-8 flex-none items-center justify-center rounded-full border border-primary/20 bg-[#eef8ef] text-primary shadow-[0_8px_18px_rgba(22,138,69,0.12)] sm:h-9 sm:w-9">
+                        <Icon className="h-3.5 w-3.5 sm:h-4 sm:w-4" strokeWidth={2} />
                       </div>
-                      <p className="mt-3 text-xs font-bold leading-snug text-text-primary sm:mt-4 sm:text-sm">{item.title}</p>
-                      <p className="mt-1.5 text-[11px] leading-4 text-text-secondary sm:mt-2 sm:text-xs sm:leading-5">{item.description}</p>
-                      <div className="absolute right-3 top-3 text-[10px] font-black text-primary/30 sm:text-xs">
-                        0{i + 1}
+                      <div className="active-step-glow mt-3 min-w-0 flex-1 rounded-[9px] border border-border bg-white/76 p-2.5 text-left shadow-sm backdrop-blur-xl sm:p-3">
+                        <div className="flex items-start gap-1.5">
+                          <span className="mt-0.5 flex-none text-[0.62rem] font-black leading-none text-primary/35 sm:text-[0.68rem]">0{i + 1}</span>
+                          <p className="text-[0.72rem] font-bold leading-tight text-text-primary sm:text-xs xl:text-sm">{item.title}</p>
+                        </div>
+                        <p className="mt-1.5 text-[0.68rem] leading-4 text-text-secondary sm:text-[0.72rem] sm:leading-5 xl:text-xs">{item.description}</p>
                       </div>
-                    </div>
-                    {i < demo.items.length - 1 && <span className="motion-arrow my-auto hidden h-px w-full min-w-8 bg-primary/25 sm:block" />}
-                    </Fragment>
+                    </li>
                   );
                 })}
-              </div>
+              </ol>
+            </div>
+          </AnimatedSection>
 
-              <div className="mt-4 rounded-[10px] border border-border bg-[#111812] p-4 text-white">
+          <AnimatedSection delay={0.1} className="min-w-0">
+            <div className="rounded-[12px] border border-border bg-gradient-to-br from-white to-[#f8fbf2] p-2.5 shadow-[0_18px_50px_rgba(23,33,26,0.09)] sm:p-4">
+              <div className="rounded-[10px] border border-border bg-[#111812] p-2.5 text-white sm:p-4">
                 <div className="flex items-center justify-between text-xs text-white/70">
                   <span>{demo.videoTitle}</span>
                   <span className="inline-flex items-center gap-1.5 rounded-full bg-primary px-2 py-1 text-[10px] font-bold text-white">
-                    <span className="live-pulse-dot h-1.5 w-1.5 rounded-full bg-white"></span>
-                    LIVE
+                    <span className="live-pulse-dot h-1.5 w-1.5 rounded-full bg-white" />
+                    {demo.liveLabel}
                   </span>
                 </div>
-                <div className="mt-4 aspect-[4/3] rounded-[8px] border border-white/10 bg-[#111812] p-3 sm:aspect-video sm:p-5">
-                  <div className="relative h-full overflow-hidden rounded-[8px] border border-white/15 bg-[#1d2a20] p-4">
+                <div className="mt-3 aspect-video rounded-[8px] border border-white/10 bg-[#111812] p-1.5 sm:mt-4 sm:p-4">
+                  <div className="relative h-full overflow-hidden rounded-[8px] border border-white/15 bg-[#1d2a20]">
                     <img
                       src="/demo_examples/estrus_1.jpeg"
-                      alt="Barn camera feed showing estrus detection on a cow"
+                      alt={demo.imageAlt}
                       className="absolute inset-0 h-full w-full object-cover"
                     />
                     <div className="absolute inset-0 bg-black/15" />
                     <div className="absolute inset-0 opacity-20 grid-pattern" />
                     <div className="absolute bottom-3 left-3 right-3 rounded-[8px] border border-white/15 bg-white/90 p-2 sm:bottom-4 sm:left-4 sm:right-4 sm:p-3">
-                      <div className="flex flex-wrap items-center justify-center gap-2 text-center text-[10px] font-bold text-text-primary sm:justify-between sm:text-xs">
+                      <div className="flex items-center justify-between gap-2 text-center text-[10px] font-bold text-text-primary sm:text-xs">
                         <span>{demo.timeline[0]}</span>
-                        <span className="hidden h-px w-10 bg-primary/40 sm:block" />
+                        <span className="h-px min-w-6 flex-1 bg-primary/40" />
                         <span>{demo.timeline[1]}</span>
-                        <span className="hidden h-px w-10 bg-primary/40 sm:block" />
+                        <span className="h-px min-w-6 flex-1 bg-primary/40" />
                         <span>{demo.timeline[2]}</span>
                       </div>
                     </div>

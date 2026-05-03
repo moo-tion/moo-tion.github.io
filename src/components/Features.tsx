@@ -1,46 +1,31 @@
 import { motion, useInView } from 'framer-motion';
 import { useRef } from 'react';
 import {
-  Camera,
-  WifiOff,
-  Activity,
+  Cctv,
+  BrainCircuit,
   Bell,
   CalendarClock,
   BarChart3,
-  HeartPulse,
-  Cctv,
 } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from './LanguageSwitcher';
 
-const featureIcons = [Camera, Cctv, WifiOff, Activity, Bell, CalendarClock, HeartPulse, BarChart3];
+const featureIcons = [Cctv, BrainCircuit, CalendarClock, BarChart3];
 const featureGradients = [
-  'bg-white',
-  'bg-[#fbfaf4]',
-  'bg-white',
-  'bg-[#f7fbf4]',
   'bg-white',
   'bg-[#fbfaf4]',
   'bg-white',
   'bg-[#f7fbf4]',
 ];
 const featureIconColors = [
-  'text-blue-400',
-  'text-cyan-400',
-  'text-violet-400',
-  'text-amber-400',
-  'text-green-400',
-  'text-pink-400',
-  'text-rose-400',
+  'text-sky-500',
+  'text-amber-500',
+  'text-rose-500',
   'text-teal-400',
 ];
 const featureIconBgs = [
-  'bg-blue-500/10',
-  'bg-cyan-500/10',
-  'bg-violet-500/10',
+  'bg-sky-500/10',
   'bg-amber-500/10',
-  'bg-green-500/10',
-  'bg-pink-500/10',
   'bg-rose-500/10',
   'bg-teal-500/10',
 ];
@@ -94,16 +79,11 @@ export default function Features() {
                   duration: 0.6,
                   ease: [0.25, 0.4, 0.25, 1],
                 }}
-                className="group relative overflow-hidden rounded-[12px] border border-transparent bg-gradient-to-br from-primary/25 via-border to-transparent p-px transition duration-300 hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_22px_54px_rgba(23,33,26,0.12)]"
+                className="group relative overflow-hidden rounded-[12px] border border-transparent bg-gradient-to-br from-primary/25 via-border to-transparent p-px transition duration-300"
               >
                 <div className={`flex h-full min-h-[178px] flex-col rounded-[12px] ${featureGradients[i]} p-3.5 shadow-sm sm:min-h-[230px] sm:p-6`}>
-                  {i === 0 && (
-                    <span className="mb-3 inline-flex self-start rounded-full bg-primary px-2.5 py-1 text-[10px] font-bold text-white sm:mb-4 sm:px-3 sm:text-xs">
-                      {f.coreFeature}
-                    </span>
-                  )}
                   <div
-                    className={`mb-3 flex h-9 w-9 items-center justify-center rounded-[8px] ${featureIconBgs[i]} group-hover:scale-110 transition-transform duration-300 sm:mb-5 sm:h-11 sm:w-11`}
+                    className={`mb-3 flex h-9 w-9 items-center justify-center rounded-[8px] ${featureIconBgs[i]} sm:mb-5 sm:h-11 sm:w-11`}
                   >
                     <Icon className={`h-4 w-4 sm:h-5 sm:w-5 ${featureIconColors[i]}`} strokeWidth={2} />
                   </div>

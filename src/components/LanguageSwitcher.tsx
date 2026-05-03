@@ -32,7 +32,6 @@ export function LanguageProvider({ children }: { children: React.ReactNode }) {
   useEffect(() => {
     localStorage.setItem('mootion-lang', locale);
     document.documentElement.lang = locale;
-    // Dispatch custom event so Astro components can listen too
     window.dispatchEvent(new CustomEvent('locale-change', { detail: locale }));
   }, [locale]);
 
@@ -54,8 +53,8 @@ export default function LanguageSwitcher() {
     <button
       onClick={toggleLocale}
       className="control-button flex h-10 items-center gap-2 rounded-full px-3 text-xs font-bold transition-all duration-200"
-      aria-label={locale === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç'}
-      title={locale === 'tr' ? 'Switch to English' : 'Türkçe\'ye geç'}
+      aria-label={locale === 'tr' ? 'İngilizceye geç' : 'Switch to Turkish'}
+      title={locale === 'tr' ? 'İngilizceye geç' : 'Switch to Turkish'}
     >
       <Languages className="h-4 w-4" strokeWidth={2.2} />
       {locale === 'tr' ? 'EN' : 'TR'}
@@ -64,7 +63,15 @@ export default function LanguageSwitcher() {
 }
 
 export function ThemeToggle() {
+  const { locale } = useLanguage();
   const [isDark, setIsDark] = useState(false);
+  const themeLabel = isDark
+    ? locale === 'tr'
+      ? 'Açık temaya geç'
+      : 'Switch to light theme'
+    : locale === 'tr'
+      ? 'Koyu temaya geç'
+      : 'Switch to dark theme';
 
   useEffect(() => {
     const saved = localStorage.getItem('mootion-theme');
@@ -86,8 +93,8 @@ export function ThemeToggle() {
     <button
       onClick={toggleTheme}
       className="control-button flex h-10 w-10 items-center justify-center rounded-full transition-all duration-200"
-      aria-label={isDark ? 'Açık moda geç' : 'Koyu moda geç'}
-      title={isDark ? 'Açık moda geç' : 'Koyu moda geç'}
+      aria-label={themeLabel}
+      title={themeLabel}
     >
       {isDark ? <Sun className="h-4 w-4" strokeWidth={2.2} /> : <Moon className="h-4 w-4" strokeWidth={2.2} />}
     </button>

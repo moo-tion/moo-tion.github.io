@@ -1,32 +1,20 @@
 import { motion, useInView } from 'framer-motion';
-import { useRef } from 'react';
+import { useRef, useState } from 'react';
 import {
-  Camera,
-  ScanEye,
-  Activity,
-  BrainCircuit,
-  Bell,
   AlertTriangle,
   DollarSign,
   Clock,
   CheckCircle2,
   Zap,
   Shield,
+  ChevronLeft,
+  ChevronRight,
 } from 'lucide-react';
 import AnimatedSection from './AnimatedSection';
 import { useLanguage } from './LanguageSwitcher';
 
 const problemIcons = [AlertTriangle, DollarSign, Clock];
 const solutionIcons = [CheckCircle2, Zap, Shield];
-
-const pipelineIcons = [Camera, ScanEye, Activity, BrainCircuit, Bell];
-const pipelineColors = [
-  'bg-white',
-  'bg-[#fbfaf4]',
-  'bg-white',
-  'bg-[#f7fbf4]',
-  'bg-white',
-];
 
 function emphasizeMetrics(text: string) {
   return text.split(/((?:~|<)?\d+(?:-\d+)?(?:\+)?\s*(?:%|ms\/?kare|ms\/?frame|ms|\$|\/\s*kare|\/\s*frame)?)/g).map((part, index) => {
@@ -42,6 +30,15 @@ export default function ProblemSolution() {
   const isInView = useInView(ref, { once: true, margin: '-100px' });
   const { t } = useLanguage();
   const ps = t.problemSolution;
+  const [activePair, setActivePair] = useState(0);
+
+  const showPreviousPair = () => {
+    setActivePair((current) => (current === 0 ? ps.problems.length - 1 : current - 1));
+  };
+
+  const showNextPair = () => {
+    setActivePair((current) => (current === ps.problems.length - 1 ? 0 : current + 1));
+  };
 
   return (
     <section id="problem-solution" className="relative py-14 sm:py-16 overflow-hidden" ref={ref}>
@@ -67,12 +64,73 @@ export default function ProblemSolution() {
 
         <AnimatedSection delay={0.1} className="mb-10 sm:mb-12">
           <div className="problem-panel overflow-hidden rounded-[12px] border border-border shadow-sm">
-            <div className="problem-panel-header grid grid-cols-2 border-b border-border px-4 py-3 text-sm font-bold sm:px-5 md:grid-cols-[1fr_auto_1fr]">
+            <div className="problem-panel-header hidden border-b border-border px-5 py-3 text-sm font-bold md:grid md:grid-cols-2 md:gap-8">
               <span className="text-red-500">{ps.problemLabel}</span>
-              <span className="hidden md:block" />
               <span className="text-primary">{ps.solutionLabel}</span>
             </div>
-            <div className="divide-y divide-border">
+
+            <div className="problem-carousel md:hidden">
+              <div className="problem-carousel-track" style={{ transform: `translateX(-${activePair * 100}%)` }}>
+                {ps.problems.map((problem, i) => {
+                  const ProblemIcon = problemIcons[i];
+                  const SolutionIcon = solutionIcons[i];
+                  const solution = ps.solutions[i];
+                  return (
+                    <article key={problem.title} className="problem-carousel-slide">
+                      <div className="problem-mobile-card">
+                        <div className="problem-cell flex gap-3 border-l-4 border-red-400 pl-4">
+                          <div className="flex h-10 w-10 flex-none items-center justify-center rounded-[8px] bg-red-500/10">
+                            <ProblemIcon className="h-5 w-5 text-red-500" />
+                          </div>
+                          <div>
+                            <p className="mb-1 text-[0.68rem] font-extrabold uppercase tracking-widest text-red-500">
+                              {ps.problemLabel}
+                            </p>
+                            <h3 className="font-semibold text-text-primary">{problem.title}</h3>
+                            <p className="mt-1 text-sm leading-6 text-text-secondary">{emphasizeMetrics(problem.desc)}</p>
+                          </div>
+                        </div>
+                        <div className="problem-cell solution-cell flex gap-3 border-l-4 border-primary pl-4">
+                          <div className="flex h-10 w-10 flex-none items-center justify-center rounded-[8px] bg-primary/10">
+                            <SolutionIcon className="h-5 w-5 text-primary" />
+                          </div>
+                          <div>
+                            <p className="mb-1 text-[0.68rem] font-extrabold uppercase tracking-widest text-primary">
+                              {ps.solutionLabel}
+                            </p>
+                            <h3 className="font-semibold text-text-primary">{solution.title}</h3>
+                            <p className="mt-1 text-sm leading-6 text-text-secondary">{solution.desc}</p>
+                          </div>
+                        </div>
+                      </div>
+                    </article>
+                  );
+                })}
+              </div>
+              <div className="problem-carousel-controls">
+                <button
+                  type="button"
+                  className="problem-carousel-button"
+                  onClick={showPreviousPair}
+                  aria-label={ps.previousPairAria}
+                >
+                  <ChevronLeft className="h-5 w-5" />
+                </button>
+                <div className="problem-carousel-status" aria-live="polite">
+                  {activePair + 1} / {ps.problems.length}
+                </div>
+                <button
+                  type="button"
+                  className="problem-carousel-button"
+                  onClick={showNextPair}
+                  aria-label={ps.nextPairAria}
+                >
+                  <ChevronRight className="h-5 w-5" />
+                </button>
+              </div>
+            </div>
+
+            <div className="hidden md:block">
               {ps.problems.map((problem, i) => {
                 const ProblemIcon = problemIcons[i];
                 const SolutionIcon = solutionIcons[i];
@@ -83,7 +141,7 @@ export default function ProblemSolution() {
                     initial={{ opacity: 0, y: 18 }}
                     animate={isInView ? { opacity: 1, y: 0 } : {}}
                     transition={{ delay: 0.12 + i * 0.08, duration: 0.45 }}
-                    className="problem-row grid gap-4 p-4 transition hover:-translate-y-1 hover:shadow-[0_14px_34px_rgba(23,33,26,0.08)] md:grid-cols-[1fr_auto_1fr] md:items-center"
+                    className="problem-row grid grid-cols-2 items-start gap-8 p-5 transition"
                   >
                     <div className="flex gap-3 border-l-4 border-red-400 pl-4">
                       <div className="flex h-10 w-10 flex-none items-center justify-center rounded-[8px] bg-red-500/10">
@@ -94,7 +152,6 @@ export default function ProblemSolution() {
                         <p className="mt-1 text-sm leading-6 text-text-secondary md:line-clamp-2">{emphasizeMetrics(problem.desc)}</p>
                       </div>
                     </div>
-                    <span className="connection-line mx-auto" />
                     <div className="flex gap-3 border-l-4 border-primary pl-4">
                       <div className="flex h-10 w-10 flex-none items-center justify-center rounded-[8px] bg-primary/10">
                         <SolutionIcon className="h-5 w-5 text-primary" />
@@ -111,44 +168,6 @@ export default function ProblemSolution() {
           </div>
         </AnimatedSection>
 
-        {/* Pipeline */}
-        <AnimatedSection delay={0.3}>
-          <div className="text-center mb-6 sm:mb-10">
-            <h3 className="text-xl sm:text-2xl font-bold text-text-primary">
-              {ps.pipelineTitle1}<span className="gradient-text">{ps.pipelineTitleHighlight}</span>
-            </h3>
-            <p className="mx-auto mt-2 max-w-2xl text-sm font-medium leading-6 text-text-secondary sm:text-base">{ps.pipelineSubtitle}</p>
-          </div>
-
-          <div className="grid grid-cols-2 gap-3 md:grid-cols-5 lg:flex lg:flex-row lg:items-center lg:justify-center lg:gap-2">
-            {ps.pipelineSteps.map((label, i) => {
-              const Icon = pipelineIcons[i];
-              return (
-                <motion.div
-                  key={i}
-                  className="flex min-w-0 items-center justify-center gap-2"
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={isInView ? { opacity: 1, y: 0 } : {}}
-                  transition={{ delay: 0.5 + i * 0.12, duration: 0.5 }}
-                >
-                  <div className={`glass-card flex w-full min-w-0 flex-col items-center gap-2 px-3 py-3.5 text-center sm:px-4 sm:py-4 lg:min-w-[120px] lg:gap-3 lg:px-5 lg:py-5 ${pipelineColors[i]}`}>
-                    <span className="text-xs font-black text-primary/50">0{i + 1}</span>
-                    <div className="flex h-10 w-10 items-center justify-center rounded-[8px] bg-primary/10 border border-border lg:h-12 lg:w-12">
-                      <Icon className="h-4 w-4 text-primary lg:h-5 lg:w-5" strokeWidth={2} />
-                    </div>
-                    <span className="text-xs sm:text-sm font-medium text-text-primary lg:whitespace-nowrap">
-                      {label}
-                    </span>
-                    <span className="rounded-full bg-primary/10 px-2 py-1 text-[9px] font-bold text-primary sm:text-[10px]">
-                      {ps.pipelineLatency[i]}
-                    </span>
-                  </div>
-                  {i < ps.pipelineSteps.length - 1 && <span className="pipeline-connection-line" />}
-                </motion.div>
-              );
-            })}
-          </div>
-        </AnimatedSection>
       </div>
     </section>
   );

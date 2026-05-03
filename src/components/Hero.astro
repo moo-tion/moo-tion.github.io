@@ -2,63 +2,57 @@
 const systemDemoUrl = 'https://www.youtube.com/watch?v=uhvhUnFRo8I';
 ---
 
-<section id="home" class="animated-soft-bg relative min-h-screen overflow-hidden">
-  <!-- Background layers -->
+<section id="home" class="animated-soft-bg relative min-h-[100svh] overflow-hidden">
   <div class="absolute inset-0">
     <div class="absolute inset-0 grid-pattern z-10"></div>
     <img src="/cows/cow.gif" alt="" class="cow-gif-accent right-[7%] top-[18%] z-10 hidden sm:block" style="width: 6.5rem; opacity: 0.045; transform: rotate(-7deg);" />
     <img src="/cows/milking.gif" alt="" class="cow-gif-accent bottom-[13%] left-[3%] z-10 hidden lg:block" style="width: 8.2rem; opacity: 0.05; transform: rotate(5deg);" />
   </div>
 
-  <!-- Content -->
-  <div class="relative z-20 mx-auto min-h-screen max-w-7xl px-4 pb-14 pt-28 sm:px-6 lg:px-8 lg:pt-24">
-    <div class="grid min-h-[calc(100vh-7rem)] items-center gap-8 lg:grid-cols-[0.85fr_1.15fr]">
-    <div class="max-w-2xl text-center lg:text-left">
-      <div class="hero-fade-in cow-print inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-primary/20 bg-white/90 px-3 py-2 text-xs font-semibold leading-none text-primary shadow-sm sm:px-4 sm:text-sm"
-        style="animation-delay: 0.1s;">
-          <span class="relative flex h-2.5 w-2.5 flex-none">
-            <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
-            <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary"></span>
-          </span>
-          <span class="truncate" data-i18n="hero.badge">Senior Year Project — Bilkent Üniversitesi</span>
-      </div>
+  <div class="relative z-20 mx-auto flex min-h-[100svh] max-w-[92rem] items-center px-4 pb-12 pt-24 sm:px-6 sm:pb-16 sm:pt-28 lg:px-8 lg:pb-20 lg:pt-24">
+    <div class="grid w-full items-center gap-10 lg:grid-cols-[minmax(31rem,0.82fr)_minmax(0,1.18fr)] lg:gap-8 xl:grid-cols-[minmax(34rem,0.84fr)_minmax(0,1.16fr)] xl:gap-12">
+      <div class="mx-auto flex w-full max-w-[46rem] flex-col justify-center py-2 text-center lg:mx-0 lg:py-8 lg:text-left">
+        <div class="flex flex-col items-center lg:items-start">
+          <div class="hero-fade-in hero-badge-cowprint inline-flex max-w-full items-center justify-center gap-2 rounded-full border border-primary/20 bg-white/90 px-3 py-2 text-xs font-semibold leading-none text-primary shadow-sm sm:px-4 sm:text-sm" style="animation-delay: 0.1s;">
+            <span class="relative flex h-2.5 w-2.5 flex-none">
+              <span class="absolute inline-flex h-full w-full animate-ping rounded-full bg-primary opacity-75"></span>
+              <span class="relative inline-flex h-2.5 w-2.5 rounded-full bg-primary"></span>
+            </span>
+            <span class="truncate" data-i18n="hero.badge">Bilkent Üniversitesi Senior Year Project</span>
+          </div>
 
-      <h1 class="hero-fade-in mx-auto mt-6 max-w-4xl text-balance text-3xl font-extrabold leading-[1.08] tracking-tight sm:mt-8 sm:text-5xl md:text-6xl lg:mx-0"
-        style="animation-delay: 0.25s;">
-          <span class="text-text-primary" data-i18n="hero.headline1">Yapay Zeka Destekli </span>
-          <span class="gradient-text" data-i18n="hero.headlineHighlight">Kızgınlık Tespiti</span>
-          <br />
-          <span class="text-text-primary" data-i18n="hero.headline2">Akıllı Çiftçilik İçin</span>
-      </h1>
-
-      <p class="hero-fade-in mx-auto mt-5 max-w-2xl text-pretty text-base font-medium leading-7 text-text-secondary sm:mt-6 sm:text-xl sm:leading-8 lg:mx-0"
-        style="animation-delay: 0.4s;" data-i18n="hero.subtitle">
-          Moo-tion, kamera görüntülerinden yararlanarak kızgınlık belirtilerini tespit eden, doğum sürecini öngörmeye yardımcı olan ve sürü aktivitesini takip eden bilgisayarlı görü tabanlı bir sistemdir. Giyilebilir sensör gerektirmez.
-      </p>
-
-      <p class="hero-fade-in mt-4 text-sm font-semibold text-primary" style="animation-delay: 0.48s;" data-i18n="hero.proofLine">
-        Gerçek ahır görüntüleriyle test edilir, sonuçlar anlık olarak değerlendirilir.
-      </p>
-
-      <div class="hero-fade-in mt-7 flex w-full flex-col items-stretch gap-3 sm:mt-8 sm:w-auto sm:flex-row sm:items-center lg:justify-start"
-        style="animation-delay: 0.55s;">
-          <a
-            href="#reports"
-            class="btn-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3 text-base font-bold"
+          <h1
+            class="hero-fade-in mx-auto mt-6 max-w-[42rem] text-balance text-[2.75rem] font-extrabold leading-[1] sm:mt-8 sm:text-[3.55rem] md:text-[4.05rem] lg:mx-0 lg:max-w-[34rem] lg:text-[3.85rem] xl:max-w-[39rem] xl:text-[4.35rem]"
+            style="animation-delay: 0.25s;"
           >
-            <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-              <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/>
-              <path d="M14 2v6h6"/>
-              <path d="M8 13h8"/>
-              <path d="M8 17h8"/>
-            </svg>
-            <span data-i18n="hero.ctaReports">Raporları Gör</span>
-          </a>
+            <span class="text-text-primary" data-i18n="hero.headline1">Akıllı Çiftçilik İçin </span>
+            <span class="gradient-text" data-i18n="hero.headlineHighlight">Yapay Zeka Destekli</span>
+            <br />
+            <span class="text-text-primary" data-i18n="hero.headline2">Kızgınlık Tespiti</span>
+          </h1>
+
+          <p
+            class="hero-fade-in mx-auto mt-5 max-w-[35rem] text-pretty text-[1.02rem] font-medium leading-7 text-text-secondary sm:mt-6 sm:text-[1.08rem] sm:leading-8 lg:mx-0 lg:max-w-[34rem]"
+            style="animation-delay: 0.4s;"
+            data-i18n="hero.subtitle"
+          >
+            Moo-tion, kamera görüntülerini kullanarak kızgınlık belirtilerini tespit eden, doğuma yaklaşan hayvanları izlemeye yardımcı olan ve sürü aktivitesini takip eden bilgisayarlı görü tabanlı bir karar destek sistemidir. Giyilebilir sensör gerektirmez.
+          </p>
+
+          <p class="hero-fade-in mt-4 max-w-[32rem] text-sm font-semibold text-primary sm:text-[0.95rem]" style="animation-delay: 0.48s;" data-i18n="hero.proofLine">
+            Gerçek ahır görüntüleriyle test edilir; sonuçlar gerçek zamanlı değerlendirilir.
+          </p>
+        </div>
+
+        <div
+          class="hero-fade-in mt-8 flex w-full flex-col items-stretch gap-3 sm:mt-9 sm:max-w-max sm:flex-row sm:items-center lg:justify-start"
+          style="animation-delay: 0.55s;"
+        >
           <a
             href={systemDemoUrl}
             target="_blank"
             rel="noopener noreferrer"
-            class="btn-primary inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3 text-base font-semibold"
+            class="btn-primary inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3 text-base font-semibold whitespace-nowrap sm:min-w-[12.5rem]"
           >
             <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-red-600" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
               <path d="M21.6 7.2a3 3 0 0 0-2.1-2.1C17.7 4.6 12 4.6 12 4.6s-5.7 0-7.5.5a3 3 0 0 0-2.1 2.1A31.2 31.2 0 0 0 2 12a31.2 31.2 0 0 0 .4 4.8 3 3 0 0 0 2.1 2.1c1.8.5 7.5.5 7.5.5s5.7 0 7.5-.5a3 3 0 0 0 2.1-2.1A31.2 31.2 0 0 0 22 12a31.2 31.2 0 0 0-.4-4.8ZM10 15.3V8.7l5.8 3.3L10 15.3Z"/>
@@ -67,72 +61,52 @@ const systemDemoUrl = 'https://www.youtube.com/watch?v=uhvhUnFRo8I';
           </a>
           <a
             href="#team"
-            class="btn-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3 text-base font-bold"
+            class="btn-secondary inline-flex min-h-12 items-center justify-center gap-2 rounded-full px-7 py-3 text-base font-bold whitespace-nowrap sm:min-w-[11rem]"
           >
             <span data-i18n="hero.ctaTeam">Ekibi Gör</span>
           </a>
+        </div>
       </div>
 
-      <div class="hero-fade-in mx-auto mt-7 grid w-full max-w-2xl grid-cols-2 gap-3 sm:mt-8 sm:grid-cols-4 lg:mx-0"
-        style="animation-delay: 0.7s;">
-          <div class="glass-card px-4 py-3 text-center">
-            <div class="text-2xl font-black text-text-primary" data-i18n="hero.statMonitoringValue">7/24</div>
-            <div class="mt-1 text-xs font-bold text-text-secondary" data-i18n="hero.statMonitoring">Gerçek Zamanlı İzleme</div>
-          </div>
-          <div class="glass-card px-4 py-3 text-center">
-            <div class="text-2xl font-black text-text-primary" data-i18n="hero.statCameraValue">CV</div>
-            <div class="mt-1 text-xs font-bold text-text-secondary" data-i18n="hero.statCamera">Kamera Tabanlı</div>
-          </div>
-          <div class="glass-card px-4 py-3 text-center">
-            <div class="text-2xl font-black text-text-primary" data-i18n="hero.statSensorValue">0</div>
-            <div class="mt-1 text-xs font-bold text-text-secondary" data-i18n="hero.statSensor">Giyilebilir Sensör Yok</div>
-          </div>
-          <div class="glass-card px-4 py-3 text-center">
-            <div class="text-2xl font-black text-text-primary" data-i18n="hero.statAnalysisValue">120 ms</div>
-            <div class="mt-1 text-xs font-bold text-text-secondary" data-i18n="hero.statAnalysis">Yapay Zeka Analizi</div>
-          </div>
-      </div>
-    </div>
-
-    <div class="hero-fade-in relative lg:scale-[1.08] lg:origin-center" style="animation-delay: 0.35s;">
-      <div class="rounded-[20px] border border-border bg-white/72 p-3 shadow-[0_24px_70px_rgba(23,33,26,0.14)] backdrop-blur-xl">
-        <div class="overflow-hidden rounded-[12px] border border-border bg-[#111812]">
-          <div class="flex items-center justify-between border-b border-white/10 px-4 py-3 text-xs text-white/70">
-            <span data-i18n="hero.mockupLive">Canlı kamera akışı</span>
-            <span class="inline-flex items-center gap-1.5 rounded-full bg-primary px-2 py-1 text-[10px] font-bold text-white">
-              <span class="live-pulse-dot h-1.5 w-1.5 rounded-full bg-white"></span>
-              LIVE
-            </span>
-          </div>
-          <div class="relative aspect-[4/3] overflow-hidden bg-[#111812] p-3 sm:aspect-[16/10] sm:p-5">
-            <img
-              src="/demo_examples/estrus_1.jpeg"
-              alt="Barn camera feed showing estrus detection on a cow"
-              class="absolute inset-0 h-full w-full object-cover"
-            />
-            <div class="absolute inset-0 bg-black/15"></div>
-            <div class="absolute inset-0 opacity-20 grid-pattern"></div>
-            <div class="absolute bottom-3 left-3 right-3 grid gap-3 sm:bottom-4 sm:left-4 sm:right-4 sm:grid-cols-2">
-              <div class="rounded-[10px] border border-white/15 bg-white/90 p-3">
-                <p class="text-xs font-semibold text-text-muted" data-i18n="hero.mockupAlert">Kızgınlık riski</p>
-                <div class="mt-2 h-2 rounded-full bg-border">
-                  <div class="h-2 w-[72%] rounded-full bg-primary"></div>
+      <div class="hero-fade-in mx-auto flex w-full max-w-[46rem] items-center justify-center lg:mx-0 lg:max-w-none" style="animation-delay: 0.35s;">
+        <div class="w-full rounded-[20px] border border-border bg-white/72 p-1.5 shadow-[0_24px_70px_rgba(23,33,26,0.14)] backdrop-blur-xl sm:p-2 lg:p-2.5">
+          <div class="overflow-hidden rounded-[12px] border border-border bg-[#111812]">
+            <div class="flex items-center justify-between border-b border-white/10 px-4 py-3 text-xs text-white/70">
+              <span data-i18n="hero.mockupLive">Canlı kamera akışı</span>
+              <span class="inline-flex items-center gap-1.5 rounded-full bg-primary px-2 py-1 text-[10px] font-bold text-white">
+                <span class="live-pulse-dot h-1.5 w-1.5 rounded-full bg-white"></span>
+                <span data-i18n="hero.liveLabel">CANLI</span>
+              </span>
+            </div>
+            <div class="relative aspect-[4/3] overflow-hidden bg-[#111812] p-3 sm:aspect-[16/10] sm:p-5 lg:aspect-[1.36/1] xl:aspect-[16/10]">
+              <img
+                src="/demo_examples/estrus_1.jpeg"
+                alt="Kızgınlık tespiti yapılan bir ineği gösteren ahır kamera görüntüsü"
+                data-i18n-alt="hero.imageAlt"
+                class="absolute inset-0 h-full w-full object-cover"
+              />
+              <div class="absolute inset-0 bg-black/15"></div>
+              <div class="absolute inset-0 opacity-20 grid-pattern"></div>
+              <div class="absolute bottom-3 left-3 right-3 grid gap-3 sm:bottom-4 sm:left-4 sm:right-4 sm:grid-cols-2">
+                <div class="rounded-[10px] border border-white/15 bg-white/90 p-3">
+                  <p class="text-xs font-semibold text-text-muted" data-i18n="hero.mockupAlert">Kızgınlık riski</p>
+                  <div class="mt-2 h-2 rounded-full bg-border">
+                    <div class="h-2 w-[72%] rounded-full bg-primary"></div>
+                  </div>
                 </div>
-              </div>
-              <div class="rounded-[10px] border border-white/15 bg-white/90 p-3">
-                <p class="text-xs font-semibold text-text-muted" data-i18n="hero.mockupAction">Mobil uyarı hazır</p>
-                <p class="mt-1 text-sm font-bold text-text-primary">Cow #17 · Review now</p>
+                <div class="rounded-[10px] border border-white/15 bg-white/90 p-3">
+                  <p class="text-xs font-semibold text-text-muted" data-i18n="hero.mockupAction">Mobil uyarı hazır</p>
+                  <p class="mt-1 text-sm font-bold text-text-primary" data-i18n="hero.mockupCowAction">İnek #17 · Şimdi incele</p>
+                </div>
               </div>
             </div>
           </div>
         </div>
       </div>
     </div>
-    </div>
   </div>
 
-  <!-- Scroll indicator -->
-  <div class="absolute bottom-8 left-1/2 -translate-x-1/2 z-20 hero-fade-in" style="animation-delay: 0.9s;">
+  <div class="absolute bottom-6 left-1/2 z-20 hidden -translate-x-1/2 hero-fade-in sm:block lg:bottom-8" style="animation-delay: 0.9s;">
     <div class="flex flex-col items-center gap-2 text-text-muted">
       <span class="text-xs font-medium tracking-widest uppercase" data-i18n="hero.scroll">Kaydır</span>
       <div class="h-8 w-[1px] bg-gradient-to-b from-text-muted to-transparent"></div>
@@ -141,52 +115,41 @@ const systemDemoUrl = 'https://www.youtube.com/watch?v=uhvhUnFRo8I';
 </section>
 
 <script>
-  // Hero i18n
   const heroTranslations: Record<string, Record<string, string>> = {
     tr: {
-      'hero.badge': 'Senior Year Project — Bilkent Üniversitesi',
-      'hero.headline1': 'Yapay Zeka Destekli ',
-      'hero.headlineHighlight': 'Kızgınlık Tespiti',
-      'hero.headline2': 'Akıllı Çiftçilik İçin',
-      'hero.subtitle': 'Moo-tion, kamera görüntülerinden yararlanarak kızgınlık belirtilerini tespit eden, doğum sürecini öngörmeye yardımcı olan ve sürü aktivitesini takip eden bilgisayarlı görü tabanlı bir sistemdir. Giyilebilir sensör gerektirmez.',
-      'hero.proofLine': 'Gerçek ahır görüntüleriyle test edilir, sonuçlar anlık olarak değerlendirilir.',
+      'hero.badge': 'Bilkent Üniversitesi Senior Year Project',
+      'hero.headline1': 'Akıllı Çiftçilik İçin ',
+      'hero.headlineHighlight': 'Yapay Zeka Destekli',
+      'hero.headline2': 'Kızgınlık Tespiti',
+      'hero.subtitle': 'Moo-tion, kamera görüntülerini kullanarak kızgınlık belirtilerini tespit eden, doğuma yaklaşan hayvanları izlemeye yardımcı olan ve sürü aktivitesini takip eden bilgisayarlı görü tabanlı bir karar destek sistemidir. Giyilebilir sensör gerektirmez.',
+      'hero.proofLine': 'Gerçek ahır görüntüleriyle test edilir; sonuçlar gerçek zamanlı değerlendirilir.',
       'hero.ctaReports': 'Raporları Gör',
       'hero.ctaTeam': 'Ekibi Gör',
       'hero.ctaDemo': 'Sistem Demosu',
-      'hero.statMonitoring': 'Gerçek Zamanlı İzleme',
-      'hero.statMonitoringValue': '7/24',
-      'hero.statCamera': 'Kamera Tabanlı',
-      'hero.statCameraValue': 'CV',
-      'hero.statSensor': 'Giyilebilir Sensör Yok',
-      'hero.statSensorValue': '0',
-      'hero.statAnalysis': 'Yapay Zeka Analizi',
-      'hero.statAnalysisValue': '120 ms',
       'hero.mockupLive': 'Canlı kamera akışı',
       'hero.mockupAlert': 'Kızgınlık riski',
       'hero.mockupAction': 'Mobil uyarı hazır',
+      'hero.mockupCowAction': 'İnek #17 · Şimdi incele',
+      'hero.imageAlt': 'Kızgınlık tespiti yapılan bir ineği gösteren ahır kamera görüntüsü',
+      'hero.liveLabel': 'CANLI',
       'hero.scroll': 'Kaydır',
     },
     en: {
-      'hero.badge': 'Senior Year Project — Bilkent University',
+      'hero.badge': 'Senior Year Project - Bilkent University',
       'hero.headline1': 'AI-Powered ',
       'hero.headlineHighlight': 'Estrus Detection',
       'hero.headline2': 'for Smart Farming',
-      'hero.subtitle': 'Moo-tion is a computer-vision-based herd management system that detects estrus signals, supports calving prediction, and monitors cow activity without wearable sensors.',
-      'hero.proofLine': 'Tested with real barn footage and evaluated in real time.',
+      'hero.subtitle': 'Moo-tion is a computer-vision decision support system for dairy farms. It detects estrus signals, helps monitor cows approaching calving, and tracks herd activity without relying on wearable sensors.',
+      'hero.proofLine': 'Tested on real barn footage and evaluated in real time.',
       'hero.ctaReports': 'View Reports',
-      'hero.ctaTeam': 'View Team',
+      'hero.ctaTeam': 'Meet the Team',
       'hero.ctaDemo': 'System Demo',
-      'hero.statMonitoring': 'Real-time Monitoring',
-      'hero.statMonitoringValue': '24/7',
-      'hero.statCamera': 'Camera-based',
-      'hero.statCameraValue': 'CV',
-      'hero.statSensor': 'No Wearable Sensor',
-      'hero.statSensorValue': '0',
-      'hero.statAnalysis': 'AI Behavior Analysis',
-      'hero.statAnalysisValue': '120 ms',
       'hero.mockupLive': 'Live camera feed',
       'hero.mockupAlert': 'Estrus risk',
       'hero.mockupAction': 'Mobile alert ready',
+      'hero.mockupCowAction': 'Cow #17 · Review now',
+      'hero.imageAlt': 'Barn camera feed showing estrus detection on a cow',
+      'hero.liveLabel': 'LIVE',
       'hero.scroll': 'Scroll',
     },
   };
@@ -197,6 +160,12 @@ const systemDemoUrl = 'https://www.youtube.com/watch?v=uhvhUnFRo8I';
       const key = el.getAttribute('data-i18n');
       if (key && trans[key]) {
         el.textContent = trans[key];
+      }
+    });
+    document.querySelectorAll('[data-i18n-alt^="hero."]').forEach((el) => {
+      const key = el.getAttribute('data-i18n-alt');
+      if (key && trans[key]) {
+        el.setAttribute('alt', trans[key]);
       }
     });
   }

@@ -6,7 +6,6 @@ import SystemDemo from './SystemDemo';
 import Reports from './Reports';
 import Team from './Team';
 import Architecture from './Architecture';
-import TechnicalDetails from './TechnicalDetails';
 import FinalCTA from './FinalCTA';
 
 /**
@@ -38,9 +37,6 @@ export default function ReactSections() {
 
       <div className="section-divider" />
       <Architecture />
-
-      <div className="section-divider" />
-      <TechnicalDetails />
 
       <FinalCTA />
     </LanguageProvider>
